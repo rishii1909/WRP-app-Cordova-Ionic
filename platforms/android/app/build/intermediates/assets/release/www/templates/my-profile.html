@@ -1,0 +1,120 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : my-profile.html
+  Purpose   : Shows user information, option to select profile icon, changing password and user logout.
+ -->
+
+<ion-view>
+
+  <!-- Header Bar Section Starts -->
+  <div ng-include="header.url"></div>
+  <!-- Header Bar Section Ends -->
+
+  <ion-content class="has-header" scroll="false">
+    <div class="offline_mode" ng-if="conStatus == 'none'">You are offline!</div>
+    <!-- Title Section Goes Here -->
+    <div class="inner_heading">
+
+      Profile
+
+    </div>
+    <!-- Profile Picture Section Starts -->
+    <div class="profile_section">
+      <div class="padding">
+        
+        <img src="img/option_lg_{{(userData.image_option_id != '') ? userData.image_option_id : '1'}}.jpg" alt="WRP Profile">
+
+        <span ng-if="conStatus != 'none'"><span ng-if="display_value == 'false'" class="profile_edit" ng-click="set_profile('edit')">
+          <i class="icon ion-edit"></i>
+        </span>
+
+      </div>
+
+    </div>
+    <!-- Profile Picture Section Ends -->
+
+    
+
+    <!-- Profile Detail Section Starts -->
+    <div class="option_section">
+      <div class="padding">
+        <div class="profile_details">
+          {{userData.firstname}} {{userData.lastName}} <br> {{userData.emailaddress}}<br>{{userData.company}}
+        </div>
+        <div ng-if="display_value == 'true'" class="profile_options">
+          <div class="profile_options_icons" id="option_1" ng-click ="update_pic(1)">
+            <img src="img/option_1_sm.jpg" alt="option_one WRP Profile">
+          </div>
+          <div class="profile_options_icons" id="option_2" ng-click ="update_pic(2)">
+            <img src="img/option_2_sm.jpg" alt="option_one WRP Profile">
+          </div>
+          <div class="profile_options_icons" id="option_3" ng-click ="update_pic(3)">
+            <img src="img/option_3_sm.jpg" alt="option_one WRP Profile">
+          </div>
+          <div class="profile_options_icons" id="option_4" ng-click ="update_pic(4)">
+            <img src="img/option_4_sm.jpg" alt="option_one WRP Profile">
+          </div>
+
+         
+        </div>
+      </div>
+    </div>
+    
+    <!-- Profile Detail Section Ends -->
+
+    <!-- Blue Login Section Starts -->
+    
+    <div class="bar bar-footer for_profile_green">
+      <div class="for_login for_profile">
+        <div class="inner-green-band">
+          <div class="list" id="form-div">
+            <div class="change_pass_link">
+              <div id="mid_div"> 
+                  <div id="change_pass_text"><a href="#/downloads">My Downloads</div>
+                  <div id="change_pass_icon">
+                    <button class="button button-icon "><img id="go_ahead" src="img/go-ahead.jpg"></button>
+                  </div>
+                  </a>
+              </div>
+              <br>
+            
+            <div class="change_pass_link">
+              <div ng-if="conStatus != 'none'" id="mid_div"> 
+                  <div id="change_pass_text"><a href="#/change-password">Change Password</div>
+                  <div id="change_pass_icon">
+                    <button class="button button-icon "><img id="go_ahead" src="img/go-ahead.jpg"></button>
+                  </div>
+                  </a>
+              </div>
+               <div ng-if="conStatus == 'none'" id="mid_div"> 
+                  <div id="change_pass_text">
+                    <a id="offline_preview_button">Change Password</div>
+                      <div id="change_pass_icon">
+                        <button class="button button-icon">
+                          <img id="go_ahead" src="img/go-ahead-grey.png">
+                        </button>
+                      </div>
+                    </a>  
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col">
+               <a ng-click="logout()" href=''> Logout</a>
+              </div>
+              
+            </div>
+            
+
+          </div>
+        
+        </div>
+      </div>
+    </div>
+   <!-- Blue Login Section Starts -->
+
+  </ion-content>
+
+  
+</ion-view>

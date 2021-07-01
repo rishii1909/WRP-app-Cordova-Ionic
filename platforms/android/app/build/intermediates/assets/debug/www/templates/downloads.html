@@ -1,0 +1,138 @@
+<ion-view>
+
+  <!-- Header Bar Section Starts -->
+  <div ng-include="header.url"></div>
+  <!-- Header Bar Section Ends -->
+
+  <div class="bar bar-subheader for_sort_filter">
+    <div class="row">
+
+      <div ng-if="downloadedMagData.length == 0 && downloadedBookData.length == 0" id="pageHeadingDownloads"
+        class="mag_type_title padding">
+        My Downloads
+      </div>
+
+      <div ng-if="downloadedMagData.length > 0" id="pageHeadingMags" ng-click="scrolltoTop()"
+        class="mag_type_title padding">
+        My Magazines
+      </div>
+      <br>
+      <div ng-if="downloadedBookData.length > 0 && downloadedMagData.length == 0" id="pageHeadingBooks"
+        class="mag_type_title padding">
+        My Books
+      </div>
+      <div id="bookHeading" class="mag_type_title padding hide">
+        My Books
+      </div>
+    </div>
+  </div>
+
+
+  <ion-content class="has-header myDivDownloads" id="scrollTest" scroll="true">
+
+
+    <div ng-if="downloadedMagData.length == 0 && downloadedBookData.length == 0">
+      <div class="no_records">Nothing in your downloads!</div>
+    </div>
+    <div class="clearfix"></div>
+
+
+    <div ng-if="downloadedMagData.length > 0" class="magazine_data" id="target">
+      <div ng-repeat="data in downloadedMagData track by $index">
+        <div class="asset-data">
+          <div class="asset-data-div">
+            <div class="section-image">
+              <img src="{{data.coverPath}}" alt="Magazine URL">
+            </div>
+
+
+            <div class="section-overlay">
+              <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-l">
+
+                <a href="#/readfull/magazine_{{data.asset_id}}">
+                  <img id="reading-icon" src="img/reading.png">
+                </a>
+              </div>
+              <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-r">
+                <a ng-click="undoDelete(data.sku, data.asset_id, data.version, data.subtype)">
+                  <img src="img/delete.png">
+                </a>
+              </div>
+
+            </div>
+            <div class="section-detail">
+              <div class="section-detail-title">{{data.title}}</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div ng-if="downloadedBookData.length > 0 && downloadedMagData.length > 0" class="mag_type_title padding"
+      id="testHeadingBooks">My Books</div>
+    <div class="clearfix"></div>
+
+    <div ng-if="downloadedBookData.length > 0" class="magazine_data" id="target">
+
+      <div ng-repeat="dataBook in downloadedBookData track by $index">
+        <div class="asset-data">
+          <div class="asset-data-div">
+            <div class="section-image">
+              <img src="{{dataBook.coverPath}}" alt="Book URL">
+            </div>
+
+
+            <div class="section-overlay">
+              <div ng-if="dataBook.urlToContent != ''" class="section-overlay-icons float-l">
+
+                <a href="#/readfull/book_{{dataBook.asset_id}}">
+                  <img id="reading-icon" src="img/reading.png">
+                </a>
+              </div>
+              <div ng-if="dataBook.urlToContent != ''" class="section-overlay-icons float-r">
+                <a
+                  ng-click="undoDelete(dataBook.sku, dataBook.asset_id, dataBook.version, dataBook.subtype)">
+                  <img src="img/delete.png">
+                </a>
+              </div>
+
+            </div>
+            <div class="section-detail">
+              <div class="section-detail-title">{{dataBook.title}}</div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <script type="text/javascript">
+      angular.element(document.querySelector('.myDivDownloads')).bind('scroll', function () {
+
+        if ($('#testHeadingBooks').offset()) {
+          var divHtBooks = $('#testHeadingBooks').offset().top;
+
+          if (divHtBooks < 105 || divHtBooks == 105) {
+            var assetName = 'Books';
+            $("#bookHeading").removeClass('hide');
+            $("#bookHeading").addClass('show');
+
+          } else {
+
+            var assetName = 'Magazines';
+            $("#bookHeading").removeClass('show');
+            $("#bookHeading").addClass('hide');
+
+          }
+        }
+      });
+    </script>
+
+  </ion-content>
+</ion-view>

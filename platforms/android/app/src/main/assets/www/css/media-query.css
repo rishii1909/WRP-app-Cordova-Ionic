@@ -1,0 +1,581 @@
+/*  
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : media-query.css
+  Purpose   : For all responsiveness majorly for devices with big screen.
+
+ */
+@media (min-width: 999px){
+
+	/* .search-result-img img
+	{
+		margin-top: 0px!important;
+		
+	} */
+}
+/*==============FOR tablets=====================*/
+@media (min-width: 768px) {
+	.bar .title {
+    	font-size: 22px;
+	}
+	#log-screen img,.profile_section img
+	{
+		width: 130px;
+		height: 130px;
+	}
+	.error-container:last-child,#forgot_password_div a,.for_login .button
+	{
+    	font-size: 18px;
+	}
+	.LoginForm i, .ChangePasswordForm i, .ForgotPasswordForm i
+	{
+		font-size: 22px;
+	}
+	.for_login .input-box
+	{
+		font-size: 18px;
+	}
+	#eye_log, #eye_log_verify_1, #eye_log_verify_2
+	{
+		font-size: 26px;
+	}
+	.inner_heading 
+	{
+   		margin-top: 40px;
+    	font-size: 22px;
+    	margin-bottom: 25px;
+	}
+	.option_section
+	{
+		margin-top: 40px;
+	}
+	.profile_details 
+	{
+    	font-size: 18px;
+    	line-height: 26px;
+	}
+	.profile_options
+	{
+		margin-top:20px;
+	}
+	.password_info span {
+    	font-size: 18px;
+    	line-height: 24px;
+	}
+	/*#eye_log_verify_1
+	{
+		top:30%;
+	}*/
+	.asset-data
+	{
+		width: 25%!important;
+		/*height: 215px;*/
+		height: 300px;
+	}
+	.for_sort_filter .col div
+	{
+		font-size: 18px;
+		font-weight: 500;
+	}
+	.mag_type_title
+	{
+		font-size: 22px;
+		padding-top: 14px;
+	}
+	.section-detail
+	{
+		font-size: 14px;
+	}
+	.section-detail-title
+	{
+		line-height: 20px;
+	    font-size: 16px;
+	    text-align: left;
+	    font-weight: 500;
+	}
+	.section-detail-price 
+	{
+	   /* width: 34%;*/
+	   width: 38%;
+	    float: right;
+	    line-height: 12px;
+	    margin-top: 10px;
+	    text-align: right;
+	    font-size: 16px;
+	    font-weight: 500;
+	}
+	.section-detail-p-title
+	{
+		/*width: 65%;*/
+		width: 60%;
+	    line-height: 15px;
+	    margin-top: 5px;
+	    font-size: 16px;
+	    font-weight: 500;
+	}
+	.bar_right_section a button img
+	{
+		width: 25px;
+	}
+	#modal_book{
+		top:100%;
+		min-height: 375px;
+	}
+	.modal 
+	{
+    	/*min-height: 408px;*/
+    	min-height: 500px;
+    	width: 80%;
+    	left:10%;
+    }
+    .mag_modal_ht
+    {
+    	/*height: 192px;*/
+    	height: 250px;
+
+    }
+    .modal_head
+    {
+    	height: 50px;
+    	padding-top: 7px;
+    }
+    .modal_footer
+    {
+    	height: 68px;
+    }
+    .modal_footer button
+    {
+    	height: 68px;
+    	font-size: 16px;
+    	line-height: 18px;
+    }
+    .modal_ul li
+    {
+    	line-height: 25px;
+    	font-size: 18px;
+    }
+    .modal_head .title_modal
+    {
+    	font-size: 22px;
+    	font-weight: 500;
+    }
+    .preview_button
+    {
+    	font-size: 16px;
+    	width: 140px;
+    	height: 50px;
+    }
+    #change_pass_text 
+    {
+	    width: 92%;
+	    float: left;
+	}
+	.for_profile a
+	{
+		font-size: 20px;
+	}
+	.preview_button_full
+	{
+		width: 160px;
+		padding-top: 6px;
+		font-size: 14px;
+	}
+	.fil_title
+	{
+		margin-top: 2px;
+	}
+	.fil_checkbox
+	{
+		line-height: 14px;
+	}
+	.offline_mode_out
+	{
+		font-size: 20px;
+	}
+	.offline_mode
+	{
+		font-size: 18px;
+		padding-top: 10px;
+	}
+	#about-div
+	{
+		font-size: 18px;
+	}
+	#about-div #label_head
+	{
+		font-size: 22px;
+	}
+	#change_pass_icon i
+	{
+		font-size: 30px;
+	}
+	input[type="radio"], input[type="checkbox"] 
+	{
+	    width: 22px;
+	    height: 26px;
+	}
+	.modal_head .close_icon
+	{
+		margin-right: 3px;
+    	margin-top: -3px;
+	}
+	.modal_head .close_icon .ion-close, .mag_type_title .close_icon .ion-close, .for_close .ion-close
+	{
+    	font-size: 24px;
+	}
+	.tabs .tab-item .icon
+	{
+		margin-bottom: 8px;
+	}
+	.tab-title
+	{
+	    font-size: 16px;
+	    margin-top: 5px;
+	}
+	.tabs
+	{
+		height: 68px;
+	}
+	.no_records
+	{
+	  
+	  margin-top: 20px;
+	  font-size: 18px;
+	}
+	/*------------------IONIC POP UPS-------------*/
+	.popup-container .popup
+	{
+		width: 300px;
+	}
+	.popup-head
+	{
+	  height: 45px;
+	  border-bottom: none;
+	  padding-top: 10px;
+	}
+	.popup-head i
+	{
+	  font-size: 30px;
+	  color: #007F3E;
+	}
+	.popup-body
+	{
+	  text-align: center;
+	  font-size: 18px;
+	}
+	.popup-buttons
+	{
+	  min-height: 30px;
+	  padding:0px;
+	  border-radius: 0px;
+	}
+	.popup-buttons .button
+	{
+	  border-radius: 0px;
+	  font-size: 18px;
+	}
+	.button-green
+	{
+	 font-size: 18px;
+	}
+	.load_more
+	{
+		font-size: 18px;
+	}
+	.for_search .input-box
+	{
+		font-size: 18px!important;
+	}
+	.for_search .col div 
+	{
+	    padding-top: 0px;
+	    font-size: 22px;
+	    text-align: right;
+	    padding-right: 10px;
+	}
+	.for_search img
+	{
+		width: 26px;
+	}
+	.no_search {
+    font-size: 18px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+	.search-result {
+	    margin-right: 15px;
+	    margin-left: 15px;
+	    width: 45%;
+	    /*margin-bottom: 30px;*/
+	    margin-bottom: 22px;
+	}
+	.for-mob
+	{
+		display: none;
+	}
+	.for-tab
+	{
+		display: block;
+	}
+	.search-result-text .text-title span
+	{
+		font-size: 16px;
+	}
+	.text-title
+	{
+		font-size: 20px;
+		line-height: 18px;
+	}
+/*------------------IONIC POP UPS-------------*/
+}
+/*For Nexus, ASUS Landscape*/
+@media (min-width: 599px) and (max-width: 720px) {
+	.search-result {
+	    /*margin-right: 15px;
+	    margin-left: 15px;
+	    width: 40%;*/
+	    margin-right: 5px;
+	    margin-left: 5px;
+	    width: 48%;
+	    margin-bottom: 20px;
+	}
+	.search-result-img
+	{
+		width: 120px;
+		height: 165px;
+		margin-right:2px;
+	}
+	.search-result-img img
+	{
+		width: 130px;
+		height: 185px;
+	}
+	.search-result-text
+	{
+		width: 45%;
+	}
+	.asset-data
+	{
+		width: 33%;
+		height: 300px;
+	}
+	.profile_section
+	{
+		margin-top: 50px;
+		
+	}
+
+	.section-detail-title
+	{
+		line-height: 20px;
+	    font-size: 16px;
+	    text-align: left;
+	    font-weight: 500;
+	}
+	.section-detail-price 
+	{
+		width: 38%;
+	    line-height: 12px;
+	    margin-top: 10px;
+	    text-align: right;
+	    font-size: 16px;
+	    font-weight: 500;
+	}
+	.section-detail-p-title
+	{
+		 width: 60%;
+	    line-height: 15px;
+	    margin-top: 5px;
+	    font-size: 16px;
+	    font-weight: 500;
+	}
+	.for_search .input-box
+	{
+		font-size: 18px!important;
+	}
+	.for_search .col div 
+	{
+	    padding-top: 2px;
+	    font-size: 22px;
+	    text-align: right;
+	    padding-right: 10px;
+	}
+	.for_search img
+	{
+		width: 26px;
+	}
+	.no_search {
+	    font-size: 18px;
+	    padding-top: 10px;
+	    font-weight: 500;
+	}
+	.load_more
+	{
+		font-size: 18px;
+	}
+	/*------------------IONIC POP UPS-------------*/
+	.popup-container .popup
+	{
+		width: 300px;
+	}
+	.popup-head
+	{
+	  height: 45px;
+	  border-bottom: none;
+	  padding-top: 10px;
+	}
+	.popup-head i
+	{
+	  font-size: 30px;
+	  color: #007F3E;
+	}
+	.popup-body
+	{
+	  text-align: center;
+	  font-size: 18px;
+	}
+	.popup-buttons
+	{
+	  min-height: 30px;
+	  padding:0px;
+	  border-radius: 0px;
+	}
+	.popup-buttons .button
+	{
+	  border-radius: 0px;
+	  font-size: 18px;
+	}
+	.button-green
+	{
+	 font-size: 18px;
+	}
+	.for-mob
+	{
+		display: none;
+	}
+	.for-tab
+	{
+		display: block;
+	}
+
+}
+/*=============ASUS LANDSCAPE==========*/
+@media (min-width: 599px) and (max-width: 720px) and (orientation: landscape) {
+
+	.login_head_bar
+	{
+		height: 55px;
+	}
+	.image_section
+	{
+		margin-top: 45px;
+	}
+	.outer-white-band img
+	{
+		width: 100px;
+	}
+	.profile_section
+	{
+		
+		margin-top: 5px;
+	}
+	.profile_edit
+	{
+		display: none;
+	}
+
+
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+.change_pass_icon button
+{
+	float: right;
+}
+.profile_options
+{
+	margin-top: 0px;
+}
+#change_pass_text
+{
+	width: 94%;
+}
+.search-result-img
+{
+	background: none;
+	height: 200px;
+}
+.text-title
+{
+	font-size: 20px;
+	height: 158px;
+}
+.search-result-img img
+{
+	margin-left: -30px;
+	
+}
+.search-result-text .text-title span
+{
+	font-size: 16px;
+}
+.for-mob
+	{
+		display: none;
+	}
+	.for-tab
+	{
+		display: block;
+	}
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) and (min-aspect-ratio: 13/9) {
+	.modal_mags{
+		height: 69%;
+	}
+
+	.landscape-popup{
+		display: block;
+	}
+	.search-result-img
+	{
+		width: 150px;
+		height: 185px;
+	}
+	.search-result-img img
+	{
+		width: 150px;
+		max-height: 185px;
+	}
+	.for-mob{
+		display:none;
+	}
+	.for-tab{
+		display:block;
+	}
+	.login_head_bar
+	{
+		height: 55px;
+	}
+	.image_section
+	{
+		margin-top: 45px;
+	}
+	.outer-white-band img
+	{
+		width: 100px;
+	}
+	.profile_section
+	{
+		
+		margin-top: 5px;
+	}
+	.profile_edit
+	{
+		display: none;
+	}
+	.about_link button{
+		float: right;
+	}
+}

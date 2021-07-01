@@ -1,0 +1,47 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : magazine-preview-full.html
+  Purpose   : Shows preview of a magazine/book.
+ -->
+
+<ion-view>
+
+
+  <div class="bar bar-header inner_head_bar">
+    <div class="preview_heading">
+
+       <a class="preview_heading_back" ng-click="back()"><button class="button button-icon "><img id="header_back_preview" src="img/header-back.jpg"></button></a>
+       <div class="preview_inner_heading white for-mob">{{mag_title}}</div>
+       <div class="preview_inner_heading white for-tab">{{completMagData.title}}</div>
+    </div>
+    
+  </div>
+  <!-- Header Bar Section Ends -->
+
+  <ion-content class="has-header" scroll="false">
+
+  <div class="offline_mode" ng-if="conStatus == 'none'">You are offline!</div>
+  <div ng-if="conStatus == 'none'" class="offline_mode_preview"><center>No preview available!</center></div>
+
+  <style type="text/css">
+  
+  </style>
+  <script type="text/javascript">
+    $("iframe").load(function(e){
+    $(this).contents().find('a').css({'pointer-events':'none', 'cursor':'default', 'text-decoration':'none','color':'black'});
+});
+  </script>
+  <iframe id ="magazine" ng-if="conStatus != 'none'" ng-src="{{trustSrc(previewData)}}" scrolling="auto">
+  </iframe>
+   
+  <div class="clearfix"></div>
+  <div class="preview_button_div">
+    <div class="profile_details preview_button_box">
+          <a ng-if="conStatus != 'none'" href="{{completMagData.shopifyURL}}" class="preview_button_full">BUY TO READ MORE</a>
+          <a ng-if="conStatus == 'none'" class="preview_button_full" id="offline_preview_button">BUY TO READ MORE</a>          
+    </div>
+  </div>
+  </ion-content>
+
+  </ion-view>

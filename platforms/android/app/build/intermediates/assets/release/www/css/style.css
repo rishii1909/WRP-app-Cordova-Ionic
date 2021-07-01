@@ -1,0 +1,1226 @@
+/*  
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : style.css
+  Purpose   : For individual pages.
+
+ */
+/*----------------FOR LOGIN STARTS----------------*/
+.for_login 
+{
+	background-color: #007F3E;
+	width: 100%;
+	overflow: scroll;
+}
+/* ---------  FOR GREEN BANDS ---------- */
+.for-blue-band .bar-footer
+{
+	height: 50%;
+	padding:0px;
+}
+
+.for_login .inner-green-band
+{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#eye_log
+{
+	float: right;
+	position: absolute;
+	bottom:58%;
+	right:0px;
+	cursor: pointer;
+	z-index: 3;
+	color: #fff;
+	font-size: 22px;
+}
+#forgot_password_div
+{
+	text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+#forgot_password_div a
+{
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+    font-weight: 600;
+}
+.sign_up_row
+{
+	width: 25%;
+	margin: 5px auto;
+	border-bottom: 1px solid #fff;
+}
+.for_login .row, .for_login .row .col
+{
+	padding: 0px;
+}
+
+/*----------------FOR LOGIN ENDS----------------*/
+
+/*----------------FOR FORGOT PASSWORD STARTS----------------*/
+.success-text
+  {
+  	color: #fff;
+  	text-align: justify;
+  }
+
+/*----------------FOR FORGOT PASSWORD ENDS----------------*/
+
+/*----------------FOR MY PROFILE STARTS----------------*/
+
+#header_back
+{
+	width: 30px;
+	margin-top: 10px;
+}
+#header_back_preview
+{
+	width: 30px;
+	
+}
+ #go_ahead
+{
+	width: 30px;
+}
+#header_back_green {
+    width: 30px;
+    margin-top: 14px;
+}
+#change_pass_icon button
+{
+	padding-right: 0px;
+	margin-top: -10px;
+}
+#header_user
+{
+	width: 25px;
+}
+#header_search
+{
+	width: 26px;
+}
+#help_user
+{
+	width: 26px;
+}
+#load_more
+{
+	width: 30px;
+}
+.inner_head_bar
+{
+	background-color: #007F3E;
+	height: 55px;
+	z-index: 99;
+	background-image: none;
+}
+.inner_head_bar button:hover
+{
+	color:#fff;
+}
+.inner_head_bar button
+{
+	color: #ffffff;
+}
+.inner_heading, .preview_inner_heading
+{
+	color: #000000;
+	margin-top: 25px;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 600;
+}
+.profile_edit
+{
+	position: absolute;
+    color: #007F3E;
+    font-size: 24px;
+    margin-top: 10px;
+    
+}
+.for_profile_green
+{
+	height: 40% !important;
+	padding:0px;
+}
+.for_profile #label_head
+{
+	color: #fff;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.change_pass_link
+{
+  
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+}
+#mid_div
+{
+	height: 35px;
+    border-bottom: 1px solid #fff;
+}
+#change_pass_text
+{
+	width: 80%;
+	float: left;
+}
+#change_pass_icon i
+{
+	font-size: 24px;
+}
+.for_profile a
+{
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	text-align: right;
+}
+.profile_options
+{
+	width: 300px;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+.profile_options_icons
+{
+	width: 60px;
+	border-radius: 50px;
+	height:60px;
+	float:left;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-top: 1px;
+}
+.image_section 
+{
+	height: 150px;
+	text-align: center;
+	color: #007F3E;
+	font-size: 16px;
+	margin-top: 75px;
+}
+.profile_section
+{
+	height: 120px;
+	text-align: center;
+	color: #007F3E;
+	font-size: 16px;
+	margin-top: 0px;
+}
+.profile_section img
+{
+	width: 100px;
+	height: 100px;
+}
+.option_section
+{
+	height: 150px;
+	text-align: center;
+	color: #007F3E;
+	font-size: 16px;
+	margin-top: 0px;
+}
+.profile_details
+{
+    font-size: 14px;
+    line-height: 18px;
+}
+/*----------------FOR MY PROFILE ENDS----------------*/
+
+/*----------------FOR CHANGE PASSWORD STARTS----------------*/
+
+.for-blue-band .for-change
+{
+	height: 55%;
+	padding:0px;
+	bottom: 0px;
+}
+
+
+#eye_log_verify_1
+{
+	float: right;
+	position: absolute;
+	top: 29%;
+	right:0px;
+	cursor: pointer;
+	z-index: 3;
+	color: #fff;
+	font-size: 24px;
+}
+
+#eye_log_verify_2
+{
+	float: right;
+	position: absolute;
+	bottom: 30%;
+	right:0px;
+	cursor: pointer;
+	z-index: 3;
+	color: #fff;
+	font-size: 24px;
+}
+.password_info
+{   
+	background: #ffffff;
+	text-align: justify;
+    position: absolute;
+    bottom: 55%;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 16px;
+    padding-bottom: 5px;
+}
+.password_info span
+{
+ 	font-size: 12px;
+    color: #007F3E;
+    line-height: 16px;
+}
+
+.password_info span i
+{
+padding-left:0px!important;
+font-size: 16px;
+color: red!important;
+padding-right: 0px!important;
+}
+
+/*----------------FOR CHANGE PASSWORD ENDS----------------*/
+
+/*----------------FOR LOGO AND HEADER STARTS----------------*/
+
+.logo_div
+{
+	padding-top: 8px;
+	width: 60%;
+	padding-left: 10px;
+}
+.logo_div img{
+	width: 130px
+}
+.bar_right_section
+{
+	width: 40%;
+	padding-top: 5px;
+	text-align: right;
+}
+.login_head_bar
+{
+	height: 80px;
+	background-image: none;
+}
+.login_head_bar button
+{
+	color: #007F3E;
+	margin-top: 5px;
+}
+.login_head_bar button:hover
+{
+	color: #007F3E;
+}
+.login_head_bar .title
+{
+	margin-top:15px;
+}
+/*----------------FOR LOGO AND HEADER ENDS----------------*/
+
+
+
+
+/*----------------Sort & Filter Style-----------------------*/
+.for_sort_filter
+{
+	padding:0px;
+	border-bottom: 1px solid #ccc;
+	-webkit-box-shadow:0px 1px 1px #ccc;
+ 	-moz-box-shadow:0px 1px 1px #ccc;
+ 	box-shadow:0px 1px 1px #ccc;
+
+}
+.for_sort_filter .col, .for_sort_filter .row, .for_search .row
+{
+	padding:0px;
+	text-align: center;
+}
+.for_sort_filter .col:first-child {
+    border-right: 1px solid #ccc;
+}
+.for_sort_filter .col div
+{
+	padding-top: 2px;
+	font-size: 16px;
+}
+.for_search .col div
+{
+	padding-top: 2px;
+	font-size: 18px;
+}
+.modal_head .close_icon .ion-close, .mag_type_title .close_icon .ion-close
+{
+	font-size: 22px;
+}
+/*----------------Sort & Filter Style Ends-----------------------*/
+
+/*----------------FOR DASHBOARD MAGAZINE STARTS----------------*/
+.for_close
+{
+	width: 9%;
+	float:right;
+	color:red;
+	text-align: right;
+	position: relative;
+	top: -5px;
+}
+.for_close .ion-close
+{
+	font-size: 22px;
+}
+.asset-data
+{
+	height: 270px; 
+	width: 50%; 
+	float: left; 
+	
+}
+.section-image
+{
+	width: 150px;
+	text-align: center;
+	height: 205px;
+	background: #ddd;
+}
+.for-books
+{
+	height: 215px;
+}
+.section-overlay
+{
+	width: 150px;
+	background:url('../img/black_bg.png');
+	background-repeat: repeat-x;
+	height: 35px;
+	padding-top:3px; 
+	padding-bottom:5px;
+	padding-left:10px; 
+	padding-right:10px; 
+	position: relative;
+    top: -35px;
+}
+.section-overlay a
+{
+	text-decoration: none;
+	color: #fff;
+	font-size:14px;
+}
+.section-overlay a img
+{
+	width: 20px;
+	margin-top: 4px;
+
+}
+
+.update-icon{
+	color: #666 !important;
+}
+
+a:hover, a:focus{
+	text-decoration: none !important;
+}
+
+a:focus{
+	text-decoration: none !important;
+}
+
+.section-overlay-update
+{
+	width: 150px;
+	background:url('../img/black_bg.png');
+	background-repeat: repeat-x;
+	height: 35px;
+	padding-top:8px; 
+	padding-bottom:5px;
+	padding-left:10px; 
+	padding-right:10px; 
+	position: relative;
+	top: 35px;
+	margin-top: -35px;
+	text-align: center;
+	z-index: 1;
+}
+
+.section-overlay-update a{
+	color: white;
+	top: 5px;
+}
+
+.section-detail
+{
+	font-size: 12px; 
+	margin-top: 5px;
+	position: relative;
+    top: -40px;
+}
+.section-detail-title
+{
+	width:100%;
+	float:left;
+	line-height:12px;
+	margin-top: 5px;
+	font-size: 12px;
+}
+.section-detail-p-title
+{
+	width:70%;
+	float:left;
+	line-height:12px;
+	margin-top: 5px;
+	font-size: 12px;
+}
+.section-detail-price
+{
+	width:30%;
+	float:right;
+	line-height:12px;
+	margin-top: 5px;
+	text-align: right;
+	font-size: 12px;
+}
+.mag_type_title
+{
+	font-size: 16px;
+	color: #707070;
+	border-bottom: 1px solid #707070;
+	width: 100%;
+	padding-bottom: 10px;
+	font-weight: 600;
+	height: 50px;
+	z-index: 1;
+	background: #fff;
+	text-align: left;
+    padding-top: 16px;
+}
+.magazine_data
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.asset-data-div
+
+{
+	width:150px; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.modal_head
+{
+	width:100%;
+	padding:10px;
+	border-bottom:1px solid #ccc;
+	height:40px;
+}
+.modal_head .title_modal
+{
+	font-size: 16px;
+    color: #666666;
+    font-weight: normal;
+    width: 70%;
+    float: left;
+
+}
+.modal_head .close_icon
+{
+	width: 15%;
+    float: right;
+    text-align: right;
+    color: red;
+	position: relative;
+	top: -5px;
+}
+.mag_modal_ht
+{
+	height: 195px;
+}
+
+.mag_modal_ht_books{
+	height: 160px;
+}
+
+.search-result-img img{
+	margin-top: -34px;
+}
+
+.tab_all, .tab_my, .tab_avail
+{
+	width: 32%;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 12px;
+}
+.for_filter
+{
+	width: 45%; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+.for_filter_icon
+{
+	width:35%; 
+	float: left; 
+	margin-top: 5px;
+}
+.for_filter_text
+{
+	width: 60%;
+	float: left;
+	margin-top: 6px;
+}
+.section-overlay-icons
+{
+	width:45%;
+	text-align: center;
+}
+
+#bookHeading{
+	top:44px;
+	position: fixed;
+	z-index: 1;
+	background: #fff;
+	text-align: left;
+}
+
+#scrollTest{
+	top:120px;
+}
+
+#testHeading{
+	margin-bottom: 10px;
+}
+
+#magazine{
+	width:100%;
+	height: 100%;
+}
+
+.offline_mode_preview{
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+.not-active {
+	pointer-events: none;
+	cursor: default;
+	text-decoration: none;
+	color: black;
+}
+
+.preview_button_div{
+	height: 55px; 
+	width:100%; 
+	background: #ffffff;
+	bottom: 0px; 
+	position: absolute;
+	border-top: 1px solid #007F3E;
+}
+/*-----------------FOR PROGRESS BAR STARTS-------------------*/
+ .progress-section
+ {
+ 	width: 100%;
+	height: 5px;
+	position: absolute;
+	z-index: 1;
+	top:43px;
+ }  
+progress
+{
+	margin:0px;
+}
+
+.profile_progress{
+	top:43px !important;
+}
+
+.load_more
+{
+	height: 40px;
+	width: 100%; 
+	text-align: center;
+	color:#007F3E;
+}
+/*-----------------FOR PROGRESS BAR ENDS--------------------*/
+
+/*----------------FOR DASHBOARD MAGAZINE ENDS----------------*/
+
+/*----------------FOR PREVIEW MAGAZINE STARTS----------------*/
+
+.preview_cover_section
+{
+	text-align: center;
+	width: 100%;
+
+}
+.preview_inner_heading
+{
+	width: 90%;
+	float: left;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.preview_heading_back
+{
+	width: 10%;
+	float: left;
+	margin-top: -6px;
+}
+
+.preview_button
+{
+	width: 120px;
+    height: 40px;
+    border: 2px solid green;
+    color: green;
+    border-radius: 4px;
+    background: none;
+    font-weight: 550;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+.preview_button_box{
+	text-align: center;
+	padding-top: 6px;
+}
+
+.preview_button_full
+{
+	width: 140px;
+    height: 40px;
+    border: 2px solid #007F3E;
+    color: #007F3E;
+    border-radius: 4px;
+    background: none;
+    font-weight: 550;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+	font-size: 12px;
+	padding-top: 11px;
+}
+.preview_upper_section
+{
+	width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 10PX;
+    padding-bottom: 20px;
+    border-bottom: 2px solid green;
+
+}
+
+#offline_preview_button{
+	color: #ccc !important;
+}
+
+#offline_preview_button button{
+	width: auto;
+	float: right;
+	margin-top: -8px;
+	padding: 0px !important;
+}
+
+#pageHeadingBook{
+	position: fixed;
+	z-index: 1;
+	background: #fff;
+	text-align: left;
+	top:106px;
+}
+
+#pageHeading{
+	position: fixed;
+	z-index: 1;
+	background: #fff;
+	text-align: left;
+	top:106px;
+}
+
+#pageHeadingDownloads{
+	position: fixed;
+	z-index: 1;
+	background: #fff;
+	text-align: left;
+	padding-top: 12px;
+}
+
+.myDivBook{
+	scroll-behavior: smooth;
+	top:157px !important;
+}
+
+.myDiv{
+	scroll-behavior: smooth;
+	top:157px !important;
+}
+
+.myDivDownloads{
+	scroll-behavior: smooth;
+	top:114px !important;
+} 
+.no-padding{
+	padding: 0 !important;
+}
+
+.subscribed_text{
+	width: 100%;
+	color: #fff;
+	margin-top: 5px;
+}
+
+.list_line_height{
+	line-height:10px;
+}
+
+.modal_footer #check-form{
+	margin-left:5px;
+}
+
+.password_lock_icon{
+	position: relative;
+	bottom: 1px;
+}
+
+.magazine_feature
+{
+	width: 90%;
+	padding: 10px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+.magazine_feature div
+{
+	width: 45%;
+	line-height: 22px;
+}
+.magazine_feature div a
+{
+	text-decoration: none;
+	font-size: 18px;
+	padding-top:20px;
+	padding-bottom: 20px;  
+}
+.preview_heading
+{
+	width: 100%;
+    padding-top: 12px;
+}
+.preview_heading .preview_inner_heading
+{
+	margin-top:2px;
+}
+.preview_img_div
+{
+	width: 220px; 
+	margin-left: auto;
+	margin-right: auto;
+}
+.prev-left
+{
+	width: 8px;
+}
+.prev-close
+{
+	width: 14px;
+}
+.for-mob
+{
+	display: block;
+}
+.for-tab
+{
+	display: none;
+}
+/*----------------FOR PREVIEW MAGAZINE ENDS----------------*/
+
+/*----------------FOR ABOUT SECTION STARTS----------------*/
+
+#about-div
+{
+	padding: 10px;
+}
+#about-div a
+{
+	color: #007F3E;
+	text-decoration: none;
+}
+#about-div label
+{
+	border-bottom: 1px solid #007F3E;
+	padding-left: 0px;
+}
+#about-div .first_head
+{
+	border-bottom: none;
+}
+#about-div #label_head
+{
+	width: 100%;
+	float: left;
+	
+}
+#about-div .about_link
+{
+	width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#about-div .about_link #mid_div
+{
+	
+    height: 35px;
+    border-bottom: 1px solid green;
+    font-size: 18px;
+}
+	
+#about-div #label_head #about_icon
+{
+	width: 15%;
+	float: right;
+	color: #007F3E;
+	text-align: right;
+	font-size: 22px;
+	
+}
+/*----------------FOR ABOUT SECTION ENDS----------------*/
+
+/*----------------FOR SEARCH RESULT SCREEN STARTS--------------*/
+.search-result
+{
+	width: 100%;
+	float: left;
+	min-height: 200px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.search-result-img
+{
+	width: 150px;
+	padding: 0px;
+	float: left;
+	margin-right: 10px;
+	height: 185px;
+	text-align: center;
+	 
+}
+.search-result-img img
+{
+	width: 150px;
+	max-height: 185px;
+}
+.search-result-text
+{
+	width: 50%;
+	padding: 0px;
+	float: right;	
+	height: 180px;
+	font-size: 16px;
+	text-align: left;
+}
+.text-title
+{
+	width: 100%;
+	height: 151px;
+	font-weight: 500;
+}
+.text-info .section-overlay
+{
+	top:0px;
+	width: 100%;
+}
+.no_search
+{
+	font-size: 15px;
+	padding-top: 10px;
+	font-weight: 600;
+}
+.search-result-text .text-title span
+{
+	font-size: 14px;
+}
+.search-result-img
+{
+	background: #ddd;
+}
+/*----------------FOR SEARCH RESULT SCREEN ENDS--------------*/
+
+/*====== */
+.progress-bar {
+	transform: rotate(180deg);
+	background-color:white !important;
+	width:100%
+}
+
+.progress {
+	border-radius:0px;
+}
+
+.progress-bar.active, .progress.active .progress-bar {
+	-webkit-animation: progress-bar-stripes 0.6s linear infinite;
+	-o-animation: progress-bar-stripes 0.6s linear infinite;
+	animation: progress-bar-stripes 0.6s linear infinite;
+}
+
+.progress-bar-striped, .progress-striped .progress-bar{
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,#007F3E 50%,#007F3E 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,#007F3E 50%,#007F3E 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,#007F3E 48%,#007F3E 75%,#db282800 75%,transparent);
+}
+
+#reading-icon{
+	margin-top: 2px;
+}
+
+
+
+/*=================FOR BANNER OVER HEADER STARTS =================*/
+.landscape-popup{
+	top: 100px;
+    transform: translateY(-100%)!important;
+    height: auto;
+    min-height: auto;
+    text-align: center;
+    background: white;
+    width: 44%;
+    vertical-align: middle;
+    left: 30%;
+    padding: 10px;
+    border-radius: 10px;
+	opacity: 0.8;	
+	z-index: 100;
+	display: none;
+	position: absolute;
+}
+
+#usability_text{
+	font-size: 18px;
+	color: red;
+	font-weight: bold;
+}
+
+.move_available_container{
+	position: absolute;
+	top: 12px;
+	right: 10px;
+}
+
+.move_available_container button#move_btn{
+	background: #007F3E;
+	color: #fff;
+	border: 0;
+	padding: 5px;
+	padding-right: 10px;
+}
+
+.move_available_container img#move_down_arrow{
+	width: 15px;
+	transform: rotate(270deg);
+	margin-right: 5px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+}
+
+/*====== */
+/*=================FOR SHOW AND HIDE TAGS STARTS====================*/
+.show
+{
+  display: block;
+}
+.hide
+{
+  display: none;
+}
+
+
+/*=================FOR SHOW AND HIDE TAGS ENDS====================*/
+/*----------------EXTRA-----------------------*/
+
+#formBox{    
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    background-color: #007F3E;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.outer-white-band
+{
+	padding: 10px 40px;
+}
+
+
+
+/*----------------EXTRA-----------------------*/
+
+/* ==================For Progressive image====================*/
+.search-result-img {
+	position: relative;
+	overflow: hidden;
+}
+
+.search-result-img img {
+	background-size: cover!important;
+	background-position: center bottom!important;
+}
+
+.search-result-img .overlay {
+	position: absolute;
+	top: 34px;
+	left: 0;
+	/* opacity: 0; */
+	transition: opacity 800ms ease-in;
+}
+
+.section-image {
+	position: relative;
+	overflow: hidden;
+}
+
+.section-image .loadingImage {
+	width: -webkit-fill-available;
+	background-size: cover!important;
+	background-position: center bottom!important;
+	z-index: 1;
+}
+
+.section-image .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* opacity: 0; */
+	transition: opacity 800ms ease-in;
+}
+
+.section-image .loader-image{
+	position: absolute;
+	width: 150px;
+	height: 205px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 0;
+}
+/* ==================For Progressive image====================*/
+
+.refresh_icon{
+	margin-top: 10px;
+}
+
+.d-none{
+	display: none;
+}
+
+/* =================For Help Popup=================*/
+.helpPopupContainer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes popup {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+.helpPopupContainer .helpPopup{
+	width: 70%;
+	height: 100%;
+	background: #fff;
+	overflow: auto;
+	animation: popup 0.6s ease-in;
+	max-width: 350px;
+	max-height: 450px;
+}
+
+.helpPopupContainer .helpPopup .header{
+	background: #007F3E;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: -webkit-sticky; /* For iOS */
+	position: sticky;
+	top: 0;
+}
+
+.helpPopupContainer #helpIcon{
+	width: 35px;
+}
+
+.helpPopupContainer .heading{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.helpPopupContainer .helpPopup .body{
+	overflow: auto;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.helpPopup .body .rows{
+	margin-left: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.helpPopup .body .icons{
+	width: 20px;
+}
+
+.helpPopup .body .description{
+	font-size: 18px;
+}
+
+.helpPopup .doneButtonContainer{
+	text-align: center;
+	width: 100%;
+}
+
+.helpPopup .doneButton{
+	background: #007F3E;
+	border: 0;
+	padding: 10px 30px;
+}
+/* =================For Help Popup=================*/

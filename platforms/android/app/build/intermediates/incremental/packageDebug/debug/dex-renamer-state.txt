@@ -1,0 +1,4 @@
+#Thu Jul 01 00:17:44 IST 2021
+base.0=D\:\\Downloads\\WRP-Android-n\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=D\:\\Downloads\\WRP-Android-n\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

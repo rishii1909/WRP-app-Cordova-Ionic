@@ -1,0 +1,707 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : tab-book.html
+  Purpose   : It will display all the books once user logs in.
+ -->
+<ion-view view-title="Dashboard">
+
+  <!-- Header Bar Section Starts ng-click="open_book()" ng-click="open_book2()" -->
+  <div ng-include="header.url"></div>
+  <div class="bar bar-subheader for_sort_filter">
+    <div class="row">
+      <div class="col" ng-class="filterOn_book == true ? 'bordergreen' : 'nobordergreen'">
+        <div class="for_filter" ng-click="open_book()">
+          <div class="for_filter_icon">
+            <img ng-if="filterOn_book == true" width="20" src="img/filter_green.jpg">
+            <img ng-if="filterOn_book == false" width="20" src="img/filter.jpg">
+          </div>
+          <div class="for_filter_text" ng-class="filterOn_book == true ? 'green' : 'grey'">Filters</div>
+
+        </div>
+      </div>
+
+      <div class="col" ng-class="sortOn_book == true ? 'bordergreen' : 'nobordergreen'">
+        <div class="for_filter" ng-click="open_book2()">
+          <div class="for_filter_icon">
+            <img ng-if="sortOn_book == true" width="20" src="img/sort-icon_green.jpg">
+            <img ng-if="sortOn_book == false" width="20" src="img/sort-icon.jpg"></div>
+          <div class="for_filter_text" ng-class="sortOn_book == true ? 'green' : 'grey'">Sort</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================== FOR STICKY HEDERS STARTS====================== -->
+
+  <div ng-if="searchStatus_book == 0" id="pageHeadingBook" class="mag_type_title padding">
+    <div class="float-l">My Downloads</div>
+    <div class="move_available_container" ng-if="conStatus !='none'">
+      <button id="move_btn" ng-click="jumpToAvailable()">
+        <span>
+          <img src="img/header-back.jpg" id="move_down_arrow"/>
+        </span>
+        <span>Available Books</span>
+      </button>
+    </div>
+  </div>
+
+  <div ng-if="searchStatus_book == 1" id="pageHeadingBook" class="mag_type_title padding capitalize">{{pageStatusBook}}
+
+    <span ng-if="orderBook">:
+      <span ng-if="orderBook == '-title'">descending</span>
+      <span ng-if="orderBook == 'title'">ascending</span>
+    </span>
+    <div class="for_close">
+      <span ng-click="backDashboardBook()" class="icon ion-close"></span>
+    </div>
+
+  </div>
+
+  <div ng-if="searchStatus_book == 2" id="pageHeadingBook" class="mag_type_title padding">Sort by Alphabet -
+    {{pageStatusBook}}
+    <div class="for_close">
+      <span ng-click="backDashboardBook()" class="icon ion-close"></span>
+    </div>
+  </div>
+  </div>
+
+  <!-- ============================== FOR STICKY HEDERS ENDS====================== -->
+
+
+
+  <!-- Header Bar Section Ends -->
+  <ion-content class="has-header myDivBook" scroll="true">
+
+    <ion-refresher class="refresh_icon" spinner="none" pulling-text="Pull to refresh" on-refresh="refreshData()"></ion-refresher>
+
+    <div style="width:100%;">
+
+      <div class="clearfix"></div>
+      <div class="offline_mode" ng-if="conStatus == 'none'">You are offline!</div>
+      <div class="clearfix"></div>
+
+      <!-- ======================SIMPLE BOOK DASHBOARD START============================== -->
+
+      <div ng-if="searchStatus_book == 0">
+        <div class="clearfix"></div>
+
+
+        <div ng-if="(bookDownloads == 0 && showLoad == 1)">
+          <div class="no_records">No downloaded books in your account.</div>
+        </div>
+
+
+        <!-- =//////////////////////////FOR DOWNLOAD SECTION START///////////////////////////// -->
+
+        <div class="magazine_data">
+          <div ng-repeat="data in dashboardMyBooks track by $index">
+
+            <div ng-if="data.downloadStatus == 'true' && data.urlToContent != ''" class="asset-data">
+              <div class="asset-data-div">
+                <div class="section-image for-books">
+                  <img src="{{data.coverPath}}" alt="BOOK URL">
+                </div>
+
+                <div class="section-overlay">
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-l">
+                    <a href="#/readfull/book_{{data.book_id}}">
+                      <img id="reading-icon" src="img/reading.png">
+                    </a>
+                  </div>
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-r">
+                    <a
+                      ng-click="undoDelete(data.sku, data.book_id, data.version, $index, 'dashboardMyBooks')">
+                      <img src="img/delete.png">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="section-detail">
+                  <div class="section-detail-title">{{data.title}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <!-- =//////////////////////////FOR DOWNLOAD SECTION ENDS///////////////////////////// -->
+
+        <!-- =//////////////////////////FOR MY BOOKS SECTION START///////////////////////////// -->
+
+        <div class="clearfix"></div>
+
+        <div id="testHeadingBook" ng-if="conStatus !='none' && data.downloadStatus !='true'"
+          class="mag_type_title padding">
+          My Books
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div ng-if="conStatus!= 'none'" class="magazine_data">
+
+          <div class="no_search" ng-if="(conStatus!= 'none' && dashboardMyBooks.length == 0 && showLoad == 1)">
+            <center>
+              No purchased books in your account.
+            </center>
+          </div>
+
+          <div class="no_search"
+            ng-if="(dashboardMyBooks.length == bookDownloads && conStatus != 'none' && showLoad == 1)">
+            <center>All purchased books are downloaded.</center>
+          </div>
+
+          <div ng-repeat="data in dashboardMyBooks track by $index">
+
+            <div
+              ng-if="dashboardMyBooks.length > 0 && conStatus != 'none' && data.urlToContent != '' && data.downloadStatus != 'true'"
+              class="asset-data">
+              <div class="asset-data-div">
+                <div class="section-image for-books">
+                  <div class="loader-image">
+                    <ion-spinner class="spinner-balanced"></ion-spinner>
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img ng-if="data.downloadStatus == 'false'" class="loadingImage" src="{{data.urlImageThumbSmall}}"
+                      alt="BOOK URL" data-image="{{data.urlImageThumb}}">
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img class="overlay" ng-cache ng-src="{{data.urlImageThumb}}">
+                  </div>
+                </div>
+                <div class="section-overlay" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'false'">
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-l">
+                    <a href="#" ng-click="openURL(data.sku, data.urlToContent)">
+                      <img id="reading-icon" src="img/reading.png">
+                    </a>
+                  </div>
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-r">
+                    <a ng-if="downloadQueue.indexOf(data.book_id) == -1"
+                      ng-click="download(data.sku, data.urlZipFile, data.book_id, data.version, data.urlImageThumb, $index, 'dashboardMyBooks', data.title)">
+                      <img src="img/download.png">
+                    </a>
+                    <a ng-if="downloadQueue.indexOf(data.book_id) != -1">
+                      <img src="img/download-grey.png">
+                    </a>
+                  </div>
+                </div>
+                <div class="section-detail">
+                  <div class="section-detail-title">{{data.title}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <!-- ============FOR MY ISSUES ENDS================== -- >
+        <!-- =============FOR AVAILABLE ISSUES STARTS============= -->
+        <div class="clearfix"></div>
+
+        <div id="testHeadingAvailBook" ng-if="conStatus != 'none' && dashboardAvailBooks.length != 0"
+          class="mag_type_title padding">
+          Available Books
+        </div>
+        <div class="clearfix"></div>
+
+        <div ng-if="conStatus != 'none'" class="magazine_data">
+          <div class="no_search" ng-if="dashboardAvailBooks.length == 0 && showLoad == 1"
+            ng-hide="dashboardAvailBooks.length">
+            <center>No records found!</center>
+          </div>
+          <div ng-repeat="data in dashboardAvailBooks track by $index">
+
+            <div ng-if="conStatus != 'none' && data.urlToContent != ''" class="asset-data">
+              <div class="asset-data-div">
+                <div class="section-image for-books">
+                  <div class="loader-image">
+                    <ion-spinner class="spinner-balanced"></ion-spinner>
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img class="loadingImage" src="{{data.urlImageThumbSmall}}" alt="BOOK URL"
+                      data-image="{{data.urlImageThumb}}">
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img class="overlay" ng-cache ng-src="{{data.urlImageThumb}}">
+                  </div>
+                </div>
+                <div ng-if="data.urlToContent != ''" class="section-overlay">
+                  <div class="section-overlay-icons float-l">
+                    <a href="#/preview/book_{{data.book_id}}">
+                      <img src="img/preview.png">
+                    </a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a href="{{data.shopifyURL}}">
+                      <img src="img/cart.png">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="section-detail">
+                  <div class="section-detail-p-title">{{data.title}}</div>
+                  <div class="section-detail-price">$&nbsp;{{data.price.toFixed(2)}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+        <!-- ============ FOR LOAD MORE STARTS================ -->
+
+
+        <center>
+          <div ng-if="spinVal_book == 1">
+            <ion-spinner icon="dots" class="spinner-balanced"></ion-spinner>
+          </div>
+        </center>
+
+
+        <div ng-if="conStatus != 'none'" class="load_more">
+          <ion-infinite-scroll
+            ng-if="total_records_books > offsetValBook && (dashboardMyBooks.length > 10 || dashboardAvailBooks.length >10)"
+            on-infinite="loadMoreBooks()" distance="2%">
+          </ion-infinite-scroll>
+        </div>
+
+        <div ng-if="conStatus == 'none'" class="load_more">
+          <ion-infinite-scroll ng-if="bookDownloads > offsetValBook" on-infinite="loadMoreBooks()" distance="2%">
+          </ion-infinite-scroll>
+        </div>
+        <!-- ============ FOR LOAD MORE ENDS================ -->
+      </div>
+
+      <!-- ======================SIMPLE BOOK DASHBOARD ENDS============================== -->
+
+      <!-- ======================FILTER AND SORT BOOK DASHBOARD START============================== -->
+      <div ng-if="searchStatus_book == 1">
+
+        <div class="no_records" ng-if="(noResultBook == true) && (bookDownloads != 0) && (conStatus == 'none')">No
+          records found!</div>
+        <div class="no_records" ng-if="(noResultBook == true) && (conStatus != 'none')">No records found!</div>
+
+        <div class="clearfix"></div>
+
+        <div ng-if="conStatus == 'none' && bookDownloads == 0">
+          <div class="no_records">No downloaded books found!</div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="magazine_data">
+          <div ng-repeat="data in topicBookResult | orderBy: orderBook | limitTo: filterLimitBook track by $index">
+            <div class="asset-data" ng-if="conStatus != 'none'">
+              <div class="asset-data-div">
+                <div class="section-image for-books">
+                  <div class="loader-image" ng-if="data.downloadStatus != 'true'">
+                    <ion-spinner class="spinner-balanced"></ion-spinner>
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img ng-if="data.downloadStatus == 'false'" class="loadingImage" src="{{data.urlImageThumbSmall}}"
+                      alt="BOOK URL" data-image="{{data.urlImageThumb}}">
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img class="overlay" ng-cache ng-src="{{data.urlImageThumb}}">
+                  </div>
+
+                  <img ng-if="data.downloadStatus == 'true'" src="{{data.coverPath}}" alt="BOOK URL">
+                </div>
+                <div class="section-overlay" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'false'">
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-l">
+                    <a href="#" ng-click="openURL(data.sku, data.urlToContent)">
+                      <img id="reading-icon" src="img/reading.png">
+                    </a>
+                  </div>
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-r">
+                    <a ng-if="downloadQueue.indexOf(data.book_id) == -1"
+                      ng-click="download(data.sku, data.urlZipFile, data.book_id, data.version, data.urlImageThumb, $index, 'topicBookResult', data.title)">
+                      <img src="img/download.png">
+                    </a>
+                    <a ng-if="downloadQueue.indexOf(data.book_id) != -1">
+                      <img src="img/download-grey.png">
+                    </a>
+                  </div>
+                  <div ng-if="data.urlToContent == ''" style="width: 100%;color: #fff;margin-top: 5px;">
+                    <center>Subscribed</center>
+                  </div>
+                </div>
+
+                <div class="section-overlay" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'true'">
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-l">
+                    <a href="#/readfull/book_{{data.book_id}}">
+                      <img id="reading-icon" src="img/reading.png"></a>
+                  </div>
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-r">
+                    <a
+                      ng-click="undoDelete(data.sku, data.book_id, data.version, $index, 'topicBookResult')">
+                      <img src="img/delete.png">
+                    </a>
+                  </div>
+                  <div ng-if="data.urlToContent == ''" style="width: 100%;color: #fff;margin-top: 5px;">
+                    <center>Subscribed</center>
+                  </div>
+                </div>
+
+                <div class="section-overlay" ng-if="data.isPurchased == 'false' && data.urlToContent != ''">
+                  <div class="section-overlay-icons float-l">
+
+                    <a href="#/preview/book_{{data.book_id}}">
+                      <img src="img/preview.png">
+                    </a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a href="{{data.shopifyURL}}">
+                      <img src="img/cart.png">
+                    </a>
+                  </div>
+                </div>
+                <div class="section-overlay" ng-if="data.isPurchased == 'false' && data.urlToContent == ''">
+                  <center>
+                    <div class="section-overlay-icons">
+                      <a href="{{data.shopifyURL}}">
+                        <img src="img/cart.png">
+                      </a>
+                    </div>
+                  </center>
+                </div>
+
+                <div class="section-detail" ng-if="data.isPurchased == 'true'">
+                  <div class="section-detail-title">{{data.title}}</div>
+                </div>
+
+                <div class="section-detail" ng-if="data.isPurchased == 'false'">
+                  <div class="section-detail-p-title">{{data.title}}</div>
+                  <div class="section-detail-price">$&nbsp;{{data.price.toFixed(2)}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- -------------------- FOR OFFLINE MODE STARTS--------------------- -->
+
+
+            <div class="asset-data"
+              ng-if="conStatus == 'none' && data.downloadStatus == 'true' && data.urlToContent != ''">
+              <div class="asset-data-div">
+                <div ng-if="data.isPurchased == 'true' && data.downloadStatus == 'true'"
+                  class="section-image for-books">
+                  <img src="{{data.coverPath}}" alt="BOOK URL">
+                </div>
+                <div class="section-overlay" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'true'">
+                  <div class="section-overlay-icons float-l">
+
+                    <a href="#/readfull/book_{{data.book_id}}">
+                      <img id="reading-icon" src="img/reading.png"></a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a
+                      ng-click="undoDelete(data.sku, data.book_id, data.version, $index, 'topicBookResult')">
+                      <img src="img/delete.png">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="section-detail" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'true'">
+                  <div class="section-detail-title">{{data.title}}</div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- -------------------- FOR OFFLINE MODE ENDS--------------------- -->
+
+
+          </div>
+
+
+        </div>
+
+        <div class="clearfix"></div>
+        <!-- ============ FOR LOAD MORE STARTS================ -->
+        <center>
+          <div ng-if="spinVal_book == 1">
+            <ion-spinner icon="dots" class="spinner-balanced"></ion-spinner>
+          </div>
+        </center>
+        <div ng-if="conStatus !='none' && filterLoaderBook == 'true' " class="load_more">
+          <ion-infinite-scroll ng-if="topicBookResult.length > filterLimitBook"
+            on-infinite="loadMoreFilter(filterLimitBook)" distance="2%">
+          </ion-infinite-scroll>
+        </div>
+        <div ng-if="conStatus =='none' && filterLoaderBook == 'true'" class="load_more">
+          <ion-infinite-scroll ng-if="bookDownloads > filterLimitBook" on-infinite="loadMoreFilter(filterLimitBook)"
+            distance="2%">
+          </ion-infinite-scroll>
+
+        </div>
+        <!-- ============ FOR LOAD MORE ENDS================ -->
+
+        <div class="clearfix"></div>
+      </div>
+      <!-- =========== Search Result ENDS === -->
+
+      <!-- =========== SORT Result STARTS === -->
+      <div ng-if="searchStatus_book == 2">
+
+        <div class="clearfix"></div>
+
+        <div class="no_records" ng-if="(noResultBook == true) && (bookDownloads != 0) && (conStatus == 'none')">No
+          records found!</div>
+        <div class="no_records" ng-if="(noResultBook == true) && (conStatus != 'none')">No records found!</div>
+
+        <div class="clearfix"></div>
+
+        <div ng-if="(conStatus == 'none' && bookDownloads == 0)">
+          <div class="no_records">No downloaded books found!</div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="magazine_data">
+          <div ng-repeat="data in allBooks | orderBy: orderBook  | limitTo:filterLimitBook track by $index">
+            <div ng-if="conStatus != 'none'" class="asset-data">
+              <div class="asset-data-div">
+                <div class="section-image for-books">
+                  <div class="loader-image" ng-if="data.downloadStatus != 'true'">
+                    <ion-spinner class="spinner-balanced"></ion-spinner>
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img ng-if="data.downloadStatus == 'false'" class="loadingImage" src="{{data.urlImageThumbSmall}}"
+                      alt="BOOK URL" data-image="{{data.urlImageThumb}}">
+                  </div>
+                  <div ng-if="data.downloadStatus == 'false'">
+                    <img class="overlay" ng-cache ng-src="{{data.urlImageThumb}}">
+                  </div>
+                  <img ng-if="data.downloadStatus == 'true'" src="{{data.coverPath}}">
+                </div>
+                <div class="section-overlay" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'false'">
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-l"><a href="#"
+                      ng-click="openURL(data.sku, data.urlToContent)">
+                      <img id="reading-icon" src="img/reading.png"></a>
+                  </div>
+                  <div ng-if="data.urlToContent != ''" class="section-overlay-icons float-r">
+                    <a ng-if="downloadQueue.indexOf(data.book_id) == -1"
+                      ng-click="download(data.sku, data.urlZipFile, data.book_id, data.version, data.urlImageThumb, $index, 'allBooks', data.title)">
+                      <img src="img/download.png">
+                    </a>
+                    <a ng-if="downloadQueue.indexOf(data.book_id) != -1">
+                      <img src="img/download-grey.png">
+                    </a>
+                  </div>
+                  <div ng-if="data.urlToContent == ''" style="width: 100%;color: #fff;margin-top: 5px;">
+                    <center>Subscribed</center>
+                  </div>
+                </div>
+
+                <div class="section-overlay" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'true'">
+                  <div class="section-overlay-icons float-l">
+                    <a href="#/readfull/book_{{data.book_id}}">
+                      <img id="reading-icon" src="img/reading.png"></a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a ng-click="undoDelete(data.sku, data.book_id, data.version, $index, 'allBooks')">
+                      <img src="img/delete.png">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="section-overlay" ng-if="data.isPurchased == 'false' && data.urlToContent != ''">
+                  <div class="section-overlay-icons float-l">
+
+                    <a href="#/preview/book_{{data.book_id}}">
+                      <img src="img/preview.png">
+                    </a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a href="{{data.shopifyURL}}">
+                      <img src="img/cart.png">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="section-overlay" ng-if="data.isPurchased == 'false' && data.urlToContent == ''">
+                  <center>
+                    <div class="section-overlay-icons">
+                      <a href="{{data.shopifyURL}}">
+                        <img src="img/cart.png">
+                      </a>
+                    </div>
+                  </center>
+                </div>
+
+                <div class="section-detail" ng-if="data.isPurchased == 'true'">
+                  <div class="section-detail-title">{{data.title}}</div>
+                </div>
+                <div class="section-detail" ng-if="data.isPurchased == 'false'">
+                  <div class="section-detail-p-title">{{data.title}}</div>
+                  <div class="section-detail-price">$&nbsp;{{data.price.toFixed(2)}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- -------------------FOR OFFLINE MODE STARTS----------------- -->
+
+
+            <div ng-if="conStatus == 'none' && data.downloadStatus == 'true' && data.urlToContent != ''"
+              class="asset-data">
+              <div class="asset-data-div">
+                <div class="section-image for-books">
+                  <img src="{{data.coverPath}}" alt="BOOK URL">
+                </div>
+                <div class="section-overlay" ng-if="data.isPurchased == 'true' && data.downloadStatus == 'true'">
+                  <div class="section-overlay-icons float-l">
+                    <a href="#/readfull/book_{{data.book_id}}">
+                      <img id="reading-icon" src="img/reading.png">
+                    </a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a ng-click="undoDelete(data.sku, data.book_id, data.version, $index, 'allBooks')">
+                      <img src="img/delete.png">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="section-detail" ng-if="data.isPurchased == 'true'">
+                  <div class="section-detail-title">{{data.title}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- -------------------FOR OFFLINE MODE ENDS----------------- -->
+
+
+
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+        <!-- ============ FOR LOAD MORE STARTS================ -->
+        <center>
+          <div ng-if="spinVal_book == 1">
+            <ion-spinner icon="dots" class="spinner-balanced"></ion-spinner>
+          </div>
+        </center>
+        <div ng-if="topicBookResult.length == 0">
+          <div ng-if="filterLoaderBook == 'true'" class="load_more">
+
+            <ion-infinite-scroll ng-if="total_records_books > filterLimitBook"
+              on-infinite="loadMoreFilter(filterLimitBook)" distance="2%">
+            </ion-infinite-scroll>
+
+          </div>
+        </div>
+        <div ng-if="topicBookResult.length != 0">
+          <div ng-if="filterLoaderBook == 'true'" class="load_more">
+
+
+            <ion-infinite-scroll ng-if="topicBookResult.length > filterLimitBook"
+              on-infinite="loadMoreFilter(filterLimitBook)" distance="2%">
+            </ion-infinite-scroll>
+          </div>
+        </div>
+        <!-- ============ FOR LOAD MORE ENDS================ -->
+
+        <div class="clearfix"></div>
+      </div>
+
+
+      <!-- =========== Search Result ENDS === -->
+
+
+
+      <!-- =============FOR AVAILABLE ISSUES ENDS============= -->
+    </div>
+
+
+    <!-- -======== FOR MODAL SCRIPT =======-->
+    <script id="modal1book.html" type="text/ng-template">
+      <div class="modal" id="modal_book">
+       
+        
+
+        <div class="modal_head no-padding">
+          <div class="title_modal padding">Topics</div>
+          <div class="close_icon padding" ng-click="closeWithoutRemoveBook()"><span class="icon ion-close"></span></div>
+        </div>
+        <div class="row">
+
+          <div class="col mag_modal_ht mag_modal_ht_books">
+            
+            <ul class="modal_ul">
+              <li ng-repeat="list in bookList">
+                <div class="col col-75 float-l fil_title">{{list.title}}</div>
+                <div class="col col-25 float-r text-r" style="line-height:10px;">
+                  <input class="fil_checkbox" type="checkbox" name="mag_type{{list.id}}"  value={{list.title}}  id="chkValue_{{list.id}}" ng-model="list.checked" ng-click="updateChkValueBook(list,$index)" >
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="clearfix"></div>
+       
+        
+        <div class="clearfix"></div>
+        <div class="for_modal_footer">
+          <div class="row">
+            <div class="col modal_footer">
+              <button class="tab_all" ng-disabled="flag_book == false" ng-click="filter_itBook('all')" ng-class="flag_book ? 'white' : 'black'" >
+                <img id="check-form" ng-if="flag_book == false" width="25" src="img/check-form_blk.jpg">
+                <img id="check-form" ng-if="flag_book == true" width="25" src="img/check-form.jpg">
+                <br>
+                ALL 
+              </button>
+              <button class="tab_my" ng-disabled="flag_book == false" ng-click="filter_itBook(true)" ng-class="flag_book ? 'white' : 'black'" >
+                <img ng-if="flag_book == false" width="25" style="margin-left:2px;" src="img/user_blk.jpg">
+                <img ng-if="flag_book == true" width="25" style="margin-left:2px;" src="img/user.jpg">
+                <br>
+                MY
+              </button>
+              <button class="tab_avail" ng-disabled="flag_book == false" ng-click="filter_itBook(false)" ng-class="flag_book ? 'white' : 'black'" >
+                <img ng-if="flag_book == false" width="25" src="img/available_blk.jpg">
+                <img ng-if="flag_book == true" width="25" src="img/available.jpg">
+                <br>
+                AVAILABLE
+              </button>
+            </div>
+          </div>
+        </div>
+         <div class="clearfix"></div>
+      </div>
+     </script>
+
+    <script id="modal2book.html" type="text/ng-template">
+      <div class="modal modal2">
+        <div class="modal_head no-padding">
+          <div class="title_modal padding">Sort Books</div>
+          <div class="close_icon padding" ng-click="closeWithoutRemoveBook2()"><span class="icon ion-close"></span></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul class="modal_ul">
+              <li>
+                <div class="col col-75 float-l">Title &nbsp;&nbsp;&nbsp;&nbsp;A - Z</div>
+                <div class="col col-25 float-r text-r">
+                  <input type="radio" name="sortOrder" value='ASC' ng-model="topicsBook.value" ng-click="sortItBook('ASC')" ng-checked="orderBook != null && orderBook == 'title'">
+                </div>
+              </li>
+              <li>
+                <div class="col col-75 float-l">Title &nbsp;&nbsp;&nbsp;&nbsp;Z - A</div>
+                <div class="col col-25 float-r text-r">
+                  <input type="radio" name="sortOrder" value='DESC' ng-model="topicsBook.value" ng-click="sortItBook('DESC')" ng-checked="orderBook != null && orderBook == '-title'">
+                </div>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+      </div>
+  </script>
+
+  </ion-content>
+</ion-view>

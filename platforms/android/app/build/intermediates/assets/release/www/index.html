@@ -1,0 +1,140 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : index.html
+  Purpose   : 
+ -->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/styleAbstract.css" rel="stylesheet">
+    <link href="css/media-query.css" rel="stylesheet">
+
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <script src="lib/jquery-1.12.4.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- <script src="lib/bootstrap.min.js"></script> -->
+    <script src="lib/imgcache.js"></script>
+    <script src="js/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/angular-base64.min.js"></script>
+    <script src="lib/angular/angular-messages.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="js/ngImgCacheIonic.js"></script>    
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+   
+    <!-- controller -->
+    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/forgot-password.js"></script>
+    <script src="js/controllers/change-password.js"></script>
+    <script src="js/controllers/my-profile.js"></script>
+    <!-- <script src="js/controllers/dashboard.js"></script> -->
+    <script src="js/controllers/magazine.js"></script>
+    <script src="js/controllers/book.js"></script>
+    <!-- <script src="js/controllers/dashboard-book.js"></script> -->
+    <script src="js/controllers/preview.js"></script>
+    <script src="js/controllers/previewFull.js"></script>
+    <script src="js/controllers/about.js"></script>
+    <script src="js/controllers/search.js"></script>
+    <script src="js/controllers/download.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directive.js"></script>
+    <script src="js/constants.js"></script>
+
+    
+
+  </head>
+
+  <body ng-app="starter" ng-controller="MainCtrl">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <!--<ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>-->
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+
+    <div class="helpPopupContainer" ng-if="showHelp">
+        <div class="helpPopup">
+          <div class="header">
+            <img src="img/help.png" alt="help" id="helpIcon" />
+            <span class="white heading">Help</span>
+          </div>
+          <div class="body">
+            <div class="rows">
+              <img src="img/reading_black.png" class="icons" alt="read" />
+              &nbsp;&nbsp;
+              <span class="description">- &nbsp;&nbsp;Read</span>
+            </div>
+            <div class="rows">
+              <img src="img/preview_black.png" class="icons" alt="preview" />
+              &nbsp;&nbsp;
+              <span class="description">- &nbsp;&nbsp;Preview</span>
+            </div>
+            <div class="rows">
+              <img src="img/delete_black.png" class="icons" alt="delete" />
+              &nbsp;&nbsp;
+              <span class="description">- &nbsp;&nbsp;Delete</span>
+            </div>
+            <div class="rows">
+              <img src="img/download_black.png" class="icons" alt="download" />
+              &nbsp;&nbsp;
+              <span class="description">- &nbsp;&nbsp;Download</span>
+            </div>
+            <div class="rows">
+              <img src="img/download-grey.png" class="icons" alt="downloading" />
+              &nbsp;&nbsp;
+              <span class="description">- &nbsp;&nbsp;Download in progress</span>
+            </div>
+            <div class="rows">
+              <img src="img/cart_black.png" class="icons" alt="cart" />
+              &nbsp;&nbsp;
+              <span class="description">- &nbsp;&nbsp;Cart</span>
+            </div>
+    
+            <div class="doneButtonContainer">
+              <button class="white doneButton" ng-click="showHelpPopup(false)">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <ion-nav-view></ion-nav-view>
+  </body>
+
+</html>

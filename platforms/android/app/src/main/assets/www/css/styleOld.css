@@ -1,0 +1,501 @@
+/* Empty. Add your own CSS if you like */
+body
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+.clearfix::before, .clearfix::after, .row::before, .row::after {
+	content: " ";
+	display: block;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+}
+.has-header {
+    top: 35px;
+}
+.bar
+{
+	border: 0px;
+}
+.float-r
+{
+	float: right;
+}
+.bar .title
+{
+	font-size: 18px;
+	color: #0095DA;
+	text-transform: uppercase;
+}
+
+.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before
+{
+	font-size:28px;
+}
+/* --------- Sub Header --------------------*/
+.bar-subheader
+{
+	top: 55px;
+}
+/* --------- Sub Header Ends --------------*/
+
+.logo_div
+{
+	padding-top: 12px;
+	width: 70%;
+	padding-left: 10px;
+}
+.bar_right_section
+{
+	width: 30%;
+	padding-top: 10px;
+	text-align: right;
+}
+.login_head_bar
+{
+	height: 80px;
+	background-image: none;
+}
+.login_head_bar button
+{
+	color: #0095DA;
+	margin-top: 5px;
+}
+.login_head_bar button:hover
+{
+	color: #0095DA;
+}
+.login_head_bar .title
+{
+	margin-top:15px;
+}
+.margin-top-10
+{
+	margin-top: 10px;
+}
+.padding-top-10
+{
+	padding-top: 10px!important;
+}
+.padding-20
+{
+	padding: 20px;
+}
+
+.padding-40
+{
+	padding: 40px;
+}
+.image_section 
+{
+	height: 150px;
+	text-align: center;
+	color: #0095DA;
+	font-size: 16px;
+	margin-top: 75px;
+}
+.profile_section
+{
+	height: 90px;
+	text-align: center;
+	color: #0095DA;
+	font-size: 16px;
+	margin-top: 0px;
+}
+.profile_section img
+{
+	width: 100px;
+	height: 100px;
+}
+.option_section
+{
+	height: 150px;
+	text-align: center;
+	color: #0095DA;
+	font-size: 16px;
+	margin-top: 0px;
+}
+.for_login 
+{
+	background-color: #0095DA;
+	width: 100%;
+}
+.for-blue-band .bar-footer
+{
+	/*height: 350px;*/
+	height: 270px;
+	padding:0px;
+}
+.for-blue-band .for-change
+{
+	/*height: 350px!important;*/
+	height: 280px!important;
+	padding:0px;
+	bottom: 0px;
+}
+.for_login .input-box
+{
+	font-size: 14px;
+	color:#fff;
+	padding-top: 0px;
+}
+.item
+{
+	border-style: none;
+}
+.for_login .item-input
+{
+	padding: 6px 0 5px 0px;
+}
+
+.for_login .placeholder-icon:first-child {
+    padding-right: 10px;
+}
+
+.for_login .list .item
+{
+	border-bottom: 1px solid #fff;
+	background-color: #0095DA;
+	border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.for_login .icon
+{
+	color: #fff;
+}
+.for_login .list-inset, .for_login .list-inset .item:last-child
+{
+	border-radius: 0px;
+}
+
+.for_login .list-inset
+{
+	margin: 20px 0px;
+}
+
+#eye_log
+{
+	float: right;
+	/*position: relative;
+	top:-45px;*/
+	position: absolute;
+	top:45%;
+	right:0px;
+	cursor: pointer;
+	z-index: 3;
+	color: #fff;
+	font-size: 20px;
+}
+#eye_log_verify_1
+{
+	float: right;
+	position: absolute;
+	/*top:40%;*/
+	top:33%;
+	right:0px;
+	cursor: pointer;
+	z-index: 3;
+	color: #fff;
+	font-size: 20px;
+}
+
+#eye_log_verify_2
+{
+	float: right;
+	position: absolute;
+	/*top:65%;*/
+	top:62%;
+	right:0px;
+	cursor: pointer;
+	z-index: 3;
+	color: #fff;
+	font-size: 20px;
+}
+
+.button
+{
+	font-size: 12px;
+	min-height: 40px;
+	padding: 0px 20px;
+	border-radius: 2px;
+}
+.button.button-white {
+    border-color: transparent;
+    background-color: #fff;
+    color: #0095DA;
+    width: 100%;
+}
+.for_login .button
+{
+	font-size: 20px;
+	min-height: 40px;
+}
+input::placeholder {
+  color: #fff;
+}
+
+
+#forgot_password_div
+{
+	text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+#forgot_password_div a
+{
+	text-decoration: none;
+	color: #fff;
+}
+.for_login .row, .for_login .row .col
+{
+	padding: 0px;
+}
+
+/*---- My Profile Page ------*/
+
+.inner_head_bar
+{
+	background-color: #0095DA;
+	height: 55px;
+	z-index: 99;
+}
+.inner_head_bar button:hover
+{
+	color:#fff;
+}
+.inner_head_bar button
+{
+	color: #ffffff;
+}
+.inner_heading
+{
+	color: #0095DA;
+	margin-top: 40px;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.profile_edit
+{
+	position: absolute;
+    color: #0095DA;
+    font-size: 24px;
+    margin-top: 10px;
+    right: 35%;
+}
+.for_inner #label_head
+{
+	color: #fff;
+	font-size: 14px;
+}
+.change_pass_link
+{
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#change_pass_text
+{
+	width: 95%;
+	float: left;
+}
+.for_inner a
+{
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+}
+.profile_options
+{
+	width: 300px;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+.profile_options_icons
+{
+	width: 60px;
+	border-radius: 50px;
+	height:60px;
+	float:left;
+	margin-left: 5px;
+	margin-right: 5px;
+	border:2px solid #ccc;
+	padding-top: 1px;
+}
+.green
+{
+	color: #32CD32;
+}
+/*----------------Tabs Style-----------------------*/
+.tabs
+{
+	height: 60px;
+	padding-top: 10px;
+	background-color: #0095DA;
+}
+.tab-item .icon,.tab-title
+{
+	color: #000;
+}
+/*----------------Tabs Style Ends-----------------------*/
+
+/*----------------Sort & Filter Style-----------------------*/
+.for_sort_filter
+{
+	padding:0px;
+	border-bottom: 1px solid #ccc;
+	-webkit-box-shadow:0px 1px 1px #ccc;
+ 	-moz-box-shadow:0px 1px 1px #ccc;
+ 	box-shadow:0px 1px 1px #ccc;
+
+}
+.for_sort_filter .col, .for_sort_filter .row
+{
+	padding:0px;
+	text-align: center;
+}
+.for_sort_filter .col:first-child {
+    border-right: 1px solid #ccc;
+}
+.for_sort_filter .col div
+{
+	padding-top: 12px;
+	font-size: 14px;
+    color: #333;
+}
+
+/*----------------Sort & Filter Style Ends-----------------------*/
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #0095DA!important;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+/*----------------For Custom Validations-----------------------*/
+
+#formBox{    
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    background-color: #0095DA;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+
+div.validator{
+    background-color: rgba(255,0,0,0.4);
+    display:block;
+    height: 0px;
+    line-height:170px;
+    width: 100%;
+    margin: 0px auto;
+    transition: all 0.5s ease;
+    font-family: arial;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding:  0 8px;    
+    color: rgba(255,255,255,0);
+    position: absolute;
+}
+/*div.validator.active{
+    height: 120px;
+    line-height:170px;
+    margin: -32px auto;
+    transition: all 0.5s ease;
+    padding: 8px;    
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    font-weight: 700;
+    position:absolute;
+
+}*/
+div.validator.active{
+    height: 55px;
+    line-height: 40px;
+    margin: -50px auto;
+    transition: all 0.5s ease;
+    padding: 8px;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+    z-index: 99;
+  }
+  .success-text
+  {
+  	color: #fff;
+  	text-align: justify;
+  }
+  input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly]
+  {
+  	background: none;
+  }
+.outer-white-band
+{
+	padding: 10px 40px;
+}
+.list .list-inset
+{
+	background:none;
+}
+.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
+    vertical-align: top;
+    font-size: 32px;
+    line-height: 18px;
+}
+.profile_details
+{
+	font-size: 12px;
+    margin-top: 15px;
+    line-height: 15px;
+}
+#inner_blue_band
+{
+	height: 240px!important;
+}
+.password_info
+{
+	text-align: justify;
+	position: absolute;
+	top: 32%;
+	padding-left: 40px;
+    padding-right: 40px;
+    line-height: 16px;
+}
+.password_info span
+{
+font-size: 12px;color: #0095DA;
+line-height: 12px;
+}
+.for-newpass span
+{
+float:right;
+text-align: right;
+margin-top: 3px;
+}
+.password_info span i, .for-newpass span i
+{
+padding-left:0px!important;
+font-size: 18px;
+color: red!important;
+padding-right: 0px!important;
+}
+.padding-top-btm-20
+{
+	padding-top: 20px!important;
+	padding-bottom: 20px!important;
+}
+#for-current-pass
+{
+	margin-top: 0px!important;
+}

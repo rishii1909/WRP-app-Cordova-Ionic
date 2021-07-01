@@ -1,0 +1,51 @@
+<div class="bar bar-header inner_head_bar"
+  ng-if="(state == '/dash') || (state == '/book') || (state == '/about') || ((state == '/login') && (userData.usersUniqueID!= null || userData.usersUniqueID!= undefined))">
+  <div class="logo_div">
+    <a href="#/tab/dash"><img src="img/wrp-logo-w.png"></a>
+  </div>
+  <div class="bar_right_section">
+    <button class="button button-icon" ng-click="showHelpPopup(true)">
+      <img id="help_user" src="img/help.png">
+    </button>
+    <a href="#/search"><button class="button button-icon "><img id="header_search"
+          src="img/search_nav.png"></button></a>
+    <a href="#/my-profile"><button class="button button-icon"><img id="header_user"
+          src="img/user-profile.jpg"></button></a>
+  </div>
+</div>
+<div class="bar bar-header inner_head_bar" ng-if="(state == '/my-profile') || (state == '/change-password')">
+  <a ng-click="back()"><button class="button button-icon "><img id="header_back" src="img/header-back.jpg"></button></a>
+  <div class="logo_div">
+    <a href="#/tab/dash"><img src="img/wrp-logo-w.png"></a>
+  </div>
+  <div class="bar_right_section">
+    <button class="button button-icon" ng-click="showHelpPopup(true)">
+      <img id="help_user" src="img/help.png">
+    </button>
+    <a href="#/search"><button class="button button-icon "><img id="header_search"
+          src="img/search_nav.png"></button></a>
+  </div>
+</div>
+<div class="bar bar-header inner_head_bar" ng-if="(state == '/downloads') || (state == '/search')">
+  <a ng-click="back()"><button class="button button-icon "><img id="header_back" src="img/header-back.jpg"></button></a>
+  <div class="logo_div">
+    <a href="#/tab/dash"><img src="img/wrp-logo-w.png"></a>
+  </div>
+  <div class="bar_right_section">
+    <button class="button button-icon" ng-click="showHelpPopup(true)">
+      <img id="help_user" src="img/help.png">
+    </button>
+    <a href="#/my-profile"><button class="button button-icon "><img id="header_user"
+          src="img/user-profile.jpg"></button></a>
+  </div>
+</div>
+<div class="landscape-popup">
+  <span id="usability_text">For better usability use in Portrait mode.</span>
+</div>
+<div ng-if="progressDiv == true || showProgress == 'true' || showProgress == true" class="progress-section">
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+      aria-valuemax="100"></div>
+  </div>
+  <!-- <div class="loadMe"></div> -->
+</div>

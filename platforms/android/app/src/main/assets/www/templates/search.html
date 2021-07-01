@@ -1,0 +1,197 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : search.html
+ -->
+
+<ion-view>
+
+  <!-- Header Bar Section Starts -->
+  <div ng-include="header.url"></div>
+  <!-- Header Bar Section Ends -->
+  <!-- --------------- Search Bar Goes Here Start -------------->
+  <div class="bar bar-subheader for_search no-padding">
+    <div class="row">
+      <div class="col no-padding">
+        <div class="list list-inset no-margin no-padding width-90">
+          <label class="item item-input ">
+            <img width="20" src="img/search-green.jpg">
+            <input class="input-box green margin-left" ng-trim="false"
+              ng-change="checkLen(searchData.searchString.length)" id="search" ng-model="searchData.searchString"
+              type="text" name="searchString" placeholder="Search Here">
+
+          </label>
+
+        </div>
+        <div ng-show="searchData.searchString.length > 0" class="close_icon padding margin-top-10">
+          <div class="icon ion-close" ng-click="clearSearch()"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --------------- Search Bar Goes Here End -------------->
+
+
+  <ion-content class="search-has-header" scroll="true">
+    <div class="offline_mode" ng-if="conStatus == 'none'">You are offline!</div>
+    <div class="padding">
+
+
+      <div class="no_search" ng-if="searchData.searchString && searchData.searchString.length <= 1">
+        <center>Enter atleast two characters to search</center>
+      </div>
+      <div ng-if="searchData.searchString && searchData.searchString.length > 1">
+
+        <div ng-if="searchData.searchString && showLoaderVal == true">
+          <center>
+            <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner>
+          </center>
+        </div>
+
+        <div class="no_search" ng-hide="searchedList.length">
+          <center>No such record found!</center>
+        </div>
+
+
+        <div ng-repeat="data in limitList =(searchList | filter:{title:tempString}) track by $index"></div>
+        <div ng-repeat="data in searchedList =(searchList | filter:{title:tempString})| limitTo:searchLimit track by $index">
+
+          <!-- IF PURCHASED IS TRUE----START -->
+          <div class="search-result" ng-if="data.isPurchased == 'true' && data.urlToContent != ''">
+            <div class="search-result-img">
+              <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner>
+              <img ng-if="conStatus != 'none'" class="loadingImage" src="{{data.urlImageThumbSmall}}" alt="Magazine URL" data-image="{{data.urlImageThumb}}">
+              <div ng-if="conStatus != 'none'"><img class="overlay" ng-cache ng-src="{{data.urlImageThumb}}"></div>
+              <img ng-if="conStatus == 'none'" src="{{data.coverPath}}" alt="Magazine URL">
+            </div>
+
+            <div class="search-result-text">
+              <div class="text-title">
+                {{data.title}}<br><br>
+                <span ng-if="data.year != ''">Year&nbsp; :&nbsp; {{data.year}}</span>
+                <br>
+                <span ng-if="data.isPurchased != 'true'">Price :&nbsp; $ {{data.price.toFixed(2)}}</span>
+
+              </div>
+              <div class="text-info">
+
+                <!-- IF DOWNLOADED IS TRUE----START -->
+                <div class="section-overlay" ng-if="data.downloadStatus == 'true'">
+                  <div class="section-overlay-icons float-l">
+                    <a ng-if="data.subtype == 'magazine'" href="#/readfull/magazine_{{data.magazine_id}}">
+                      <img id="reading-icon" src="img/reading.png">
+                    </a>
+
+                    <a ng-if="data.subtype == 'book'" href="#/readfull/book_{{data.book_id}}">
+                      <img id="reading-icon" src="img/reading.png">
+                    </a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a ng-if="data.subtype == 'magazine'" ng-click="undoDelete(data.sku, data.magazine_id, data.version, $index,data.subtype)">
+                      <img src="img/delete.png">
+                    </a>
+                    <a ng-if="data.subtype == 'book'" ng-click="undoDelete(data.sku, data.book_id, data.version, $index, data.subtype)">
+                      <img src="img/delete.png">
+                    </a>
+                  </div>
+                </div>
+                <!-- IF DOWNLOADED IS TRUE----END -->
+
+                <!-- IF DOWNLOADED IS FALSE----START -->
+                <div class="section-overlay" ng-if="data.downloadStatus == 'false'">
+                  <div class="section-overlay-icons float-l">
+                    <a href="#" ng-click="openURL(data.sku, data.urlToContent)">
+                      <img id="reading-icon" src="img/reading.png">
+                    </a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a ng-if="(data.subtype == 'magazine') && (downloadQueueMags.indexOf(data.magazine_id) == -1)" ng-click="download(data.sku, data.urlZipFile, data.magazine_id, data.version, data.urlImageThumb, $index, data.subtype, data.title)">
+                      <img src="img/download.png">
+                    </a>
+                    <a ng-if="(data.subtype == 'magazine') && (downloadQueueMags.indexOf(data.magazine_id) != -1)">
+                      <img src="img/download-grey.png">
+                    </a>
+                    <a ng-if="(data.subtype == 'book') && (downloadQueueBooks.indexOf(data.book_id) == -1)"
+                      ng-click="download(data.sku, data.urlZipFile, data.book_id, data.version, data.urlImageThumb, $index, data.subtype, data.title)">
+                      <img src="img/download.png">
+                    </a>
+                    <a ng-if="(data.subtype == 'book') && (downloadQueueBooks.indexOf(data.book_id) != -1)">
+                      <img src="img/download-grey.png">
+                    </a>
+                  </div>
+                </div>
+
+                <!-- IF DOWNLOADED IS FALSE----END -->
+
+              </div>
+            </div>
+          </div>
+          <!-- IF PURCHASED IS TRUE----END -->
+
+          <!-- IF PURCHASED IS FALSE----START -->
+          <div class="search-result" ng-if="data.isPurchased == 'false'">
+            <div class="search-result-img">
+              <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner>
+              <img class="loadingImage" src="{{data.urlImageThumbSmall}}" alt="Magazine URL" data-image="{{data.urlImageThumb}}">
+              <div><img class="overlay" ng-cache ng-src="{{data.urlImageThumb}}"></div>
+            </div>
+
+            <div class="search-result-text">
+              <div class="text-title">
+                {{data.title}}<br><br>
+                <span ng-if="data.year != ''">Year&nbsp; :&nbsp; {{data.year}}</span>
+                <br>
+                <span>Price :&nbsp; $ {{data.price.toFixed(2)}}</span>
+              </div>
+              <div class="text-info">
+                <div ng-if="data.urlToContent != ''" class="section-overlay">
+                  <div class="section-overlay-icons float-l">
+                    <a ng-if="data.subtype == 'magazine'" href="#/preview/magazine_{{data.magazine_id}}">
+                      <img src="img/preview.png">
+                    </a>
+                    <a ng-if="data.subtype == 'book'" href="#/preview/book_{{data.book_id}}">
+                      <img src="img/preview.png">
+                    </a>
+                  </div>
+                  <div class="section-overlay-icons float-r">
+                    <a href="{{data.shopifyURL}}">
+                      <img src="img/cart.png">
+                    </a>
+                  </div>
+                </div>
+                <div ng-if="data.urlToContent == ''" class="section-overlay">
+                  <center>
+                    <div class="section-overlay-icons">
+                      <a href="{{data.shopifyURL}}">
+                        <img src="img/cart.png">
+                      </a>
+                    </div>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- IF PURCHASED IS FALSE----END -->
+
+
+        </div>
+        <div class="clearfix"></div>
+
+        <!-- ============ FOR LOAD MORE STARTS================ -->
+        <center>
+          <div ng-if="spinVal == 1">
+            <ion-spinner icon="dots" class="spinner-balanced"></ion-spinner>
+          </div>
+        </center>
+
+        <ion-infinite-scroll ng-if="limitList.length > searchLimit" on-infinite="loadMoreFilter(searchLimit)"
+          distance="1%">
+        </ion-infinite-scroll>
+        <!-- ============ FOR LOAD MORE ENDS================ -->
+      </div>
+
+    </div>
+  </ion-content>
+
+</ion-view>

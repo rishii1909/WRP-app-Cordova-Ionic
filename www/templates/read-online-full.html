@@ -1,0 +1,41 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : read-online-full.html
+  Purpose   : Shows user information, option to select profile icon, changing password and user logout.
+ -->
+
+<ion-view>
+
+  <ion-content scroll="false">
+
+    <iframe id="magazine" name="magazine" ng-src="{{trustSrc(assetTemp.downloadPath)}}" scrolling="auto">
+    </iframe>
+
+    <div class="clearfix"></div>
+
+  </ion-content>
+
+  <!-- Footer Bar Section Starts -->
+  <div class="bar bar-footer inner_magazine_bar">
+
+    <div class="preview_bar_right_section" ng-click="back()">
+      <a>Done</a>
+    </div>
+
+    <div class="preview_bar_left_section" ng-click="redirectToParent()">
+      <a>
+        <img class="prev-left" src="img/left-arrow.jpg">
+      </a>
+    </div>
+
+    <div class="preview_bar_left_section" ng-click="redirectToFwd()">
+      <a>
+        <img class="prev-left" src="img/right-arrow.jpg">
+      </a>
+    </div>
+
+  </div>
+  <!-- Footer Bar Section Ends -->
+
+</ion-view>

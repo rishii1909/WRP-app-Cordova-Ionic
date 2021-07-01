@@ -1,0 +1,99 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : magazine-preview.html
+  Purpose   : Shows user information, option to select profile icon, changing password and user logout.
+ -->
+
+</style>
+<ion-view>
+
+  <!-- Header Bar Section Starts -->
+  <div class="bar bar-header inner_head_bar">
+    <div class="logo_div">
+      <a href="#/tab/dash"><img src="img/wrp-logo-w.png"></a>
+    </div>
+    <div class="bar_right_section">
+      <a href=""><button class="button button-icon "><img width="20" src="img/search.png"></button></a>
+      <a href="#/my-profile"><button class="button button-icon"><img width="20" src="img/user-profile.png"></button></a>
+    </div>
+  </div>
+  <!-- Header Bar Section Ends -->
+
+  <ion-content class="has-header" scroll="true" lazy-scroll>
+
+    <div class="offline_mode" ng-if="conStatus == 'none'">You are offline!</div>
+
+    <!-- Title Section Goes Here -->
+    <div class="preview_inner_heading">
+      
+{{completMagData.title}}
+    </div>
+    <!-- Magazine Cover Section Starts -->
+    <div class="preview_cover_section">
+      <div class="preview_img_div">
+        <div ng-if="showSpinner == 'true'"><ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner></div>
+       
+        <img ng-if="conStatus != 'none'" class="loading" width="220" style="margin-top: -40px;" ng-src="{{completMagData.urlImageFull}}" alt="Magazine Cover">
+
+         
+         <img ng-if="conStatus == 'none'" src="img/offline_book.jpg" style="margin-top: -40px;" alt="Magazine URL">
+        
+
+      </div>
+
+    </div>
+    <!-- Magazine Cover Section Ends -->
+
+    
+
+    <!-- Magazine Buy Section Starts -->
+    <div class="preview_upper_section">
+      <div class="padding">
+        <!-- <div class="profile_details">
+          <a href="{{completMagData.shopifyURL}}" class="preview_button">BUY NOW</a>
+        </div> -->
+        <div class="profile_details">
+          <a ng-if="conStatus != 'none'" ng-click='openurl("{{completMagData.shopifyURL}}")' class="preview_button">BUY NOW</a>
+          <a ng-if="conStatus == 'none'" class="preview_button">BUY NOW</a>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Magazine Buy Section Ends -->
+
+    <div class="clearfix"></div>
+
+    
+     
+        <div class="magazine_feature">
+          <div class="float-l grey">Price:</div><div class="float-l">$ {{completMagData.price}}</div>
+          <br>
+          <div class="float-l grey">Year:</div><div class="float-l">{{completMagData.year}}</div>
+        </div>
+        <br>
+      
+
+    
+
+    <div class="clearfix"></div>
+
+    <div class="magazine_feature">
+        <div class="float-l">
+          <a class="green" ng-click="back()">Back</a>
+        </div>
+        <div class="float-r text-r">
+          <a ng-if="conStatus != 'none'" class="green" href="#/magazine-preview/magazine-preview-full/{{magazine_id}}">Preview</a>
+          <a ng-if="conStatus == 'none'" class="green">No Preview<br/> <span style="font-size:12px; color:red;">(Go Online)</span></a>
+        </div>
+    </div>
+
+   
+
+     <div class="clearfix"></div>
+
+  </ion-content>
+
+  
+</ion-view>

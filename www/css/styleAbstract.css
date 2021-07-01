@@ -1,0 +1,486 @@
+/*  
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : styleAbstract.css
+  Purpose   : For all the common CSS used in overall app.
+
+ */
+body
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.clearfix::before, .clearfix::after, .row::before, .row::after {
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+.has-header {
+    top: 55px;
+}
+.bar
+{
+  border: 0px;
+}
+.float-l
+{
+  float: left;
+}
+.float-r
+{
+  float: right;
+}
+.bar .title
+{
+  font-size: 18px;
+  color: #000000;
+  text-transform: uppercase;
+}
+/*----------------Showing errors----------------*/
+.error-container {
+  margin: 5px 0;
+}
+.error-container:last-child {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #fff;
+}
+.error {
+  padding: 10px 16px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #555;
+  vertical-align: middle;
+}
+.error i {
+  font-size: 24px;
+  color: #B83E2C;  
+  vertical-align: middle;
+}
+.last-error-container > .error {
+  padding: 10px 16px 0;
+}
+.has-errors {
+  border-bottom: 2px solid #B83E2C !important;
+}
+.no-errors {
+  border-bottom: 1px solid white !important;
+}
+/*----------------Showing errors ENDS-----------------------*/
+
+/*----------------INPUT STYLE STARTS-----------------------*/
+
+.for_login .input-box
+{
+  font-size: 16px;
+  color:#fff;
+  padding-top: 0px;
+}
+.item
+{
+  border-style: none;
+}
+.for_login .item-input
+{
+  padding: 0px;
+}
+
+.for_login .placeholder-icon:first-child {
+    padding-right: 10px;
+}
+
+.for_login .list .item
+{
+  border-bottom: 1px solid #fff;
+  background-color: #007F3E;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.for_login .icon
+{
+  color: #fff;
+}
+.for_login .list-inset, .for_login .list-inset .item:last-child
+{
+  border-radius: 0px;
+}
+.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+     border-bottom-right-radius: 0px!important; 
+     border-bottom-left-radius: 0px!important;
+}
+.for_login .list-inset
+{
+  margin: 0px 0px 10px 0px;
+  height: 60px;
+}
+
+.for_login .button
+{
+  font-size: 16px;
+  min-height: 40px;
+
+}
+input::placeholder {
+  color: #fff;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly]
+{
+    background: none;
+}
+
+.button
+{
+  font-size: 12px;
+  min-height: 40px;
+  padding: 0px 20px;
+  border-radius: 2px;
+}
+.button.button-white {
+    border-color: transparent;
+    background-color: #fff;
+    color: #007F3E;
+    width: 100%;
+}
+button[disabled]
+{
+  color: black;
+}
+/*----------------INPUT STYLE ENDS-----------------------*/
+
+/*----------------Tabs Style-----------------------*/
+.tabs
+{
+  height: 55px;
+  padding-top: 4px;
+  background-color: #007F3E;
+}
+.tab-item .icon,.tab-title
+{
+  color: #fff;
+}
+
+.tabs .tab-item .icon.magazine {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/magazine.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.magazine-fill {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/magazine-fill.png');
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.book {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/book.png');
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.about {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/about.png');
+  background-size:contain;
+}
+/*----------------Tabs Style Ends-----------------------*/
+
+
+.list .list-inset
+{
+  background:none;
+}
+.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
+    vertical-align: top;
+    font-size: 30px;
+    line-height: 18px;
+}
+
+/* --------- Sub Header --------------------*/
+.bar-subheader
+{
+  top: 63px;
+}
+/* --------- Sub Header Ends --------------*/
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background: none!important;
+    background-color: #007F3E!important;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+/* --------- CUSTOME MARGIN PADDING ALIGNMENTS FLOAT START --------------*/
+.margin-top-10
+{
+  margin-top: 10px;
+}
+.padding-top-10
+{
+  padding-top: 10px!important;
+}
+.padding-20
+{
+  padding: 20px;
+}
+
+.padding-40
+{
+  padding: 40px;
+}
+
+/* --------- CUSTOME MARGIN PADDING ALIGNMENTS FLOAT ENDS --------------*/
+
+/*================FOR FILTER MODAL ===============*/
+.modal-backdrop
+{
+  background: rgba(0,0,0,0.6);
+  
+}
+.modal2
+{
+  min-height:150px!important;
+}
+
+.modal
+{
+  min-height:200px;
+  top: 100%;
+  transform: translateY(-100%)!important;
+}
+
+.modal_mags{
+  overflow-y:scroll;
+}
+
+.modal ul li div, .for_modal_footer .row, .for_modal_footer .row .col
+{
+  padding: 0px;
+}
+.modal_footer
+{
+  width: 100%;
+  height: 58px;
+  background-color: #007F3E;
+}
+.modal_footer button
+{
+  background: none!important;
+  border: none!important;
+}
+.modal_ul li
+{
+  line-height: 24px;
+}
+input[type="radio"], input[type="checkbox"] {
+    
+    width: 22px;
+    height: 20px;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated
+{
+  color: #ffffff;
+  border-bottom:3px solid #ffffff;
+}
+.tabs
+{
+  background-size:100% 0px;
+}
+.text-r
+{
+  text-align: right;
+}
+.black
+{
+  color: black;
+}
+.white
+{
+  color: white;
+}
+.grey
+{
+  color: #707070;
+}
+.green
+{
+  color: #007F3E!important;
+}
+.bordergreen
+{
+  border-bottom: 2px solid #007F3E;
+}
+.nobordergreen
+{
+  border-bottom: none;
+}
+.capitalize
+{
+  text-transform: capitalize;
+}
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+
+  width: 100%;
+  height: 10px;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+    background: #007F3E;
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+.offline_mode
+{
+    background-color: rgba(0,0,0,1);
+    color: #ffffff;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;;
+}
+.offline_mode_out
+{
+    color:red; 
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+.no_records
+{
+  text-align:center;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.inner_magazine_bar
+{
+    width: 100%;
+    padding-top: 15px;
+    background-color: #ddd;
+    height: 50px;
+}
+.has-header-preview {
+    top: 40px;
+}
+.preview_bar_left_section
+{
+    width: 10%;
+    float: left;
+}
+.preview_bar_right_section
+{
+    width: auto;
+    text-align: left;
+    font-size: 20px;
+    margin-top: -2px;
+    margin-right: auto;
+}
+.preview_bar_right_section a
+{
+  font-size: 20px;
+  color: #0000ff;
+  padding-left: 10px;
+}
+.preview_bar_right_section a i
+{
+  font-size: 17px;
+  color: #666;
+}
+.preview_bar_left_section a
+{
+  padding-left: 10px;
+}
+.no-margin
+{
+  margin: 0px;
+}
+.no-padding
+{
+  padding: 0px!important;
+}
+.width-90
+{
+  width: 90%;
+  float: left;
+}
+.margin-left
+{
+  margin-left:20px!important;
+}
+input.input-box::placeholder {
+  color: #ccc;
+}
+.search-has-header
+{
+  top: 109px;
+}
+/*------------------IONIC POP UPS-------------*/
+.popup-container.active .popup
+{
+  background: #ffffff;
+}
+.popup-head
+{
+  height: 45px;
+  border-bottom: none;
+  padding-top: 10px;
+}
+.popup-head i
+{
+  font-size: 30px;
+  color: #007F3E;
+}
+.popup-body
+{
+  text-align: center;
+  padding: 20px;
+}
+.popup-buttons
+{
+  min-height: 30px;
+  padding:0px;
+  border-radius: 0px;
+}
+.popup-buttons .button
+{
+  border-radius: 0px;
+}
+.popup-buttons .button:hover
+{
+  color: #fff;
+}
+.button-green
+{
+  background: #007F3E;
+  color: #fff;
+}
+
+/*------------------IONIC POP UPS-------------*/
+.dlgContainer
+{
+  text-align: center!important;
+}
+.dlgContainer #lbl-title 
+{
+  color: #007F3E!important;
+  text-align: center!important;
+  border-bottom: 1px solid #ccc!important;
+}
+.loadMe
+  {
+    width: 100%;
+    height: 5px;
+    background: url('../img/downloadBar.gif')!important;
+  }

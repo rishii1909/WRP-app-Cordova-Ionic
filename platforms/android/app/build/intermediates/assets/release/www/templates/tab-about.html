@@ -1,0 +1,82 @@
+<!-- 
+  Developer : Nitisha Sharma
+  Skype Id  : nsharma111
+  File Name : tab-about.html
+  Purpose   : It will display privacy policy and about service once user logs in.
+ -->
+
+<ion-view view-title="Dashboard">
+
+  <!-- Header Bar Section Starts -->
+  <div ng-include="header.url"></div>
+  <!-- Header Bar Section Ends -->
+  <ion-content class="has-header myDivAbout overflow-scroll" scroll="false">
+    <div class="offline_mode" ng-if="conStatus == 'none'">You are offline!</div>
+    <div style="width:100%;">
+
+      <!-- =========== ABOUT STARTS === -->
+      <div class="list" id="about-div">
+
+            <div class="list list-inset" >
+                <label id="label_head" class="item item-input first_head green">
+                  App version
+                 
+                </label>
+                 <br/>
+                  <div>WRP 1.1</div>
+            </div>
+
+            <div class="list list-inset" >
+                <label id="label_head" class="item item-input grey" style="font-size: 15px;">
+                  About &amp; Legal
+                  
+                </label>
+            </div>
+
+            <div class="about_link">
+              <div ng-if="conStatus != 'none'" id="mid_div"> 
+                  <div id="change_pass_text"><a href="#" onclick="window.open('http://shop.whiteriverproductions.com/pages/terms-of-service', '_blank', 'location=no,footer=yes,closebuttoncaption=Done,closebuttoncolor=#0000ff'); return false;">Terms of Service</div>
+                  <div id="change_pass_icon"><button class="button button-icon "><img id="go_ahead" src="img/go-ahead-green.jpg"></button></div>
+                  </a>
+              </div>
+
+              <div ng-if="conStatus == 'none'" id="mid_div"> 
+                  <div id="change_pass_text"><a id="offline_preview_button">Terms of Service</div>
+                  <div id="change_pass_icon offline_preview_button"><button class="button button-icon "><img id="go_ahead" src="img/go-ahead-grey.jpg"></button></div>
+                  </a>
+              </div>
+
+            </div>
+            <div class="about_link">
+              <div ng-if="conStatus != 'none'" id="mid_div"> 
+                  <div id="change_pass_text"><a href="#" onclick="window.open('http://shop.whiteriverproductions.com/pages/privacy-policy', '_blank', 'location=no,footer=yes,closebuttoncaption=Done,closebuttoncolor=#0000ff'); return false;">Privacy Policy</div>
+                  <div id="change_pass_icon"><button class="button button-icon "><img id="go_ahead" src="img/go-ahead-green.jpg"></button></div>
+                  </a>
+              </div>
+
+              <div ng-if="conStatus == 'none'" id="mid_div"> 
+                  <div id="change_pass_text"><a id="offline_preview_button">Privacy Policy</div>
+                  <div id="change_pass_icon offline_preview_button"><button class="button button-icon "><img id="go_ahead" src="img/go-ahead-grey.jpg"></button></div>
+                  </a>
+              </div>
+
+            </div>
+            
+            
+      </div>
+     
+      
+
+        <!-- =========== ABOUT ENDS === -->
+      
+
+    </div>
+ 
+  </ion-content>
+
+
+    
+</ion-view>
+
+
+
